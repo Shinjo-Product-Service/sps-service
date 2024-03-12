@@ -1,0 +1,48 @@
+---
+import Image from "astro/components/Image.astro";
+
+const menu = [
+    {
+        name: 'ホーム',
+        url: '/'
+    },
+    {
+        name: '特長',
+        url: '/feature'
+    },
+    {
+        name: 'サービス',
+        url: '/service'
+    },
+    {
+        name: "実績",
+        url: '/works'
+    },
+    {
+        name: 'よくある質問',
+        url: '/faq'
+    }
+]
+---
+
+<footer class="grid grid-cols-[auto_auto] justify-between w-defaultLayout m-auto pt-24 pb-32 border-t border-lineGray">
+    <div class="flex flex-col gap-12">
+        <a href="" class="inline-block">
+            <Image src="/logo.svg" alt="Logo" width={112} height={66} class="w-[11.2rem] h-[6.6rem]" />
+        </a>
+        <small class="text-lg text-gray text-light">
+            ©新庄プロダクトサービス. All Rights Reserved.
+        </small>
+    </div>
+    <nav class="">
+        <ul class="flex">
+            {menu.map((item) => (
+                <li class="">
+                    <a href={item.url} class="px-12 py-4 text-2xl">
+                        {item.name}
+                    </a>
+                </li>
+            ))}
+        </ul>
+    </nav>
+</footer>
