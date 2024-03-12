@@ -1,5 +1,7 @@
 ---
-import { Image } from 'astro:assets';
+import Image from "astro/components/Image.astro"
+
+
 
 const menu = [
     {
@@ -22,13 +24,12 @@ const menu = [
         name: 'よくある質問',
         url: '/faq'
     }
-
 ]
 ---
 
 <header class="grid grid-cols-[auto_1fr_auto] items-center px-32 py-10">
     <a href="" class="">
-        <Image 
+        <Image
             src="/logo.svg"
             alt="Logo"
             width="112"

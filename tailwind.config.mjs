@@ -13,7 +13,8 @@ export default {
 				default: "#242424",
 				key: "#5A93A4",
 				gray: "#AEAEAE",
-				white: "#FCFCFC"
+				white: "#FCFCFC",
+				lineGray: "#D3D3D3"
 			},
 			fontSize: {
 				defaultText: [
