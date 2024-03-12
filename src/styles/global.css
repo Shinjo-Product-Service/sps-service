@@ -4,4 +4,6 @@
 
 html {
     font-size: calc(10 / 1440 * 100vw);
+    font-family: "Noto Sans Japanes", sans-serif;
+    font-weight: 300;
 }
