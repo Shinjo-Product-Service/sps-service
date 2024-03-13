@@ -1,0 +1,15 @@
+---
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="feature">
+    <main>
+        <Breadcrumb
+            lists={[
+                { name: "ホーム", path: "/" },
+                { name: "特長"}
+            ]}
+        />
+    </main>
+</Layout>

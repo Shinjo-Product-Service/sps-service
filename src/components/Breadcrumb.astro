@@ -1,0 +1,24 @@
+---
+const {lists} = Astro.props;
+interface ListItem {
+  path: string;
+  name: string;
+}
+---
+
+<nav class="">
+    <ol class="flex">
+        {
+            lists.map((list: ListItem, index: number) => (
+                <li class="text-[1.2rem]">
+                    {lists.length - 1 !==index ? (
+                        <a href={`/${list.path}`}>{list.name}</a>
+                        <span class="mx-4 text-gray">・</span>
+                    ) : (
+                        <span class="text-gray">{list.name}</span>
+                    )}
+                </li>
+            ))
+        }
+    </ol>
+</nav>
