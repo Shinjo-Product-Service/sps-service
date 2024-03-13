@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Link from '../components/Link.astro';
+import NewsItem from '../components/news/NewsItem.astro';
 import Image from 'astro/components/Image.astro';
 
 const featureList = [
@@ -17,6 +18,45 @@ const featureList = [
 		title: '経験豊富なスタッフが対応で安心',
 }
 ];
+
+const serviceList = [
+	{
+		title: 'Web制作',
+		description: 'もしあればここにそれを説明するテキストが入ってきますからね。入れるようにしておきましょうね。まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。',
+	},
+	{
+		title: "映像制作",
+		description: "もしあればここにそれを説明するテキストが入ってきますからね。入れるようにしておきましょうね。まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。"
+	},
+	{
+		title: "SNS運用代行",
+		description: "もしあればここにそれを説明するテキストが入ってきますからね。入れるようにしておきましょうね。まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。"
+	},
+	{
+		title: "名刺・チラシデザイ",
+		description: "もしあればここにそれを説明するテキストが入ってきますからね。入れるようにしておきましょうね。まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。"
+	}
+]
+
+	// {
+	// 	industry: '飲食',
+	// 	employees: '10名',
+	// 	assignment: 'ECサイト構築',
+	// },
+const workInformations = [
+	{
+		title: "業種",
+		description: "農業"
+	},
+	{
+		title: "従業員数",
+		description: "1~10人"
+	},
+	{
+		title: "課題",
+		description: "商品のブランドアピール不足と販売ルートの不足"
+	},
+]
 ---
 
 <Layout title="Welcome to Astro.">
@@ -32,13 +72,13 @@ const featureList = [
 			</h1>
 		</div>
 		<!-- FEATURE -->
-		<section class="mt-[14rem] w-defaultLayout m-auto">
+		<section class="w-defaultLayout m-auto mt-56">
 			<div class="mb-24 grid grid-cols-[1fr_auto] gap-12 items-end">
 				<div class="">
 					<h2 class="mb-8 text-sectionEnTitle text-key">
 						Feature
 					</h2>
-					<h3 class="mb-16 text-[4.8rem] font-mincho">
+					<h3 class="mb-16 text-[4.8rem] font-mincho leading-normal">
 						私たちには選ばれる理由が<br>
 						3つあります
 					</h3>
@@ -54,12 +94,116 @@ const featureList = [
 					{featureList.map((feature) => (
 						<li class="">
 							<Image src={feature.image} alt={feature.title} width={10} height={10} class="w-full mb-4" />
-							<p class="text-2xl font-mincho">{feature.title}</p>
+							<p class="mt-6 text-[1.6rem] font-mincho">{feature.title}</p>
 						</li>
 					))}
 				</ul>
 			</div>
 		</section>
+		<!-- SERVICE -->
+		<section class="w-defaultLayout m-auto mt-56">
+			<h2 class="mb-8 text-sectionEnTitle text-key">
+				Service
+			</h2>
+			<div class="grid grid-cols-[1fr_auto]">
+				<h3 class="text-[4.4rem] font-mincho leading-relaxed">
+					お困りのデジタル課題を<br>
+					解決します
+				</h3>
+				<p class="w-[40rem] text-defaultText">
+					もしあればここにそれを説明するテキストが入ってきますからね。入れるようにしておきましょうね。
+					まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。
+				</p>
+			</div>
+			<div class="mt-32">
+				<ul class="grid grid-cols-4 gap-8">
+					{serviceList.map((service) => (
+						<li class="p-12 border border-lineGray rounded-xl">
+							<h4 class="mb-5 text-[1.7rem] font-mincho">{service.title}</h4>
+							<p class="text-[1.3rem] leading-relaxed">{service.description}</p>
+						</li>
+					))
+					}
+				</ul>
+			</div>
+			<div class="flex justify-end mt-24">
+				<Link href="/service" text="サービスをくわしく見る" />
+			</div>
+		</section>
+		<!-- WORKS -->
+		<section class="grid grid-cols-2 gap-32 mt-56 w-defaultLayout m-auto">
+			<div class="grid grid-cols-[auto_1fr] gap-[1.8rem]">
+				<h2 class="w-36 mb-8 py-4 text-sectionEnTitle text-key">
+					Works
+				</h2>
+				<div class="grid grid-rows-[auto_1fr_auto]">
+					<h3 class="mb-16 text-[4.8rem] font-mincho leading-normal">
+						これまでの<br>
+						お客様成功事例
+					</h3>
+					<p class="text-defaultText mb-28">
+						もしあればここにそれを説明するテキストが入ってきますからね。入れるようにしておきましょうね。
+						まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。
+					</p>
+					<Link href="/works" text="事例をくわしく見る" />
+				</div>
+			</div>
+			<div class="">
+				<Image src="/assets/images/home/work.jpg" alt="制作実績" width={600} height={340} class="w-full" />
+				<div class="mt-8">
+					<h4 class="mb-8 pb-6 text-[2rem] font-mincho border-b border-lineGray">
+						ブランディングした商品をEC機能を導入して販売
+					</h4>
+					<div class="flex gap-3 w-fit px-5 py-3 border border-lineGray rounded-full">
+						<Image src="/assets/images/home/work_icon.png" alt="制作実績" width={26} height={17.33} class="" />
+						<span class="text-[1.3rem]">
+							泉菜株式会社
+						</span>
+					</div>
+					<div class="flex flex-col gap-2 mt-5">
+						{workInformations.map((workInformation) => (
+							<dl class="grid grid-cols-[6rem_1fr] gap-8">
+								<dt class="text-[1.3rem] text-gray">{workInformation.title}</dt>
+								<dd class="text-[1.3rem]">{workInformation.description}</dd>
+							</dl>
+						))}
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- NEWS -->
+		<section class="flex flex-col gap-16 items-end w-defaultLayout m-auto mt-56 mb-64 pl-[10.8rem]">
+			<div class="grid grid-cols-[auto_1fr] gap-48 w-full">
+				<div class="flex flex-col py-8">
+					<h2 class="text-sectionEnTitle text-key order-2">
+						News
+					</h2>
+					<h3 class="mb-8 text-[4rem] font-mincho order-1">
+						最新のお知らせ
+					</h3>
+				</div>
+				<div class="">
+					<ul class="">
+						<li class="">
+							<NewsItem />
+						</li>
+						<li class="">
+							<NewsItem />
+						</li>
+						<li class="">
+							<NewsItem />
+						</li>
+						<li class="">
+							<NewsItem />
+						</li>
+						<li class="">
+							<NewsItem />
+						</li>
+					</ul>
+				</div>
+			</div>
+			<Link href="/news" text="お知らせ一覧を見る" />
+		</section>
 	</main>
 </Layout>
-
+ 
