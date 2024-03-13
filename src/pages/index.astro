@@ -1,17 +1,65 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Link from '../components/Link.astro';
+import Image from 'astro/components/Image.astro';
+
+const featureList = [
+	{
+		image: '/assets/images/home/feature_1.jpg',
+		title: '低コストで導入が可能',
+},
+	{
+		image: '/assets/images/home/feature_2.jpg',
+		title: '地方企業のデジタル課題をフルサポート',
+},
+	{
+		image: '/assets/images/home/feature_3.jpg',
+		title: '経験豊富なスタッフが対応で安心',
+}
+];
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<div class="flex items-center w-screen h-screen py-[10vw]">
-			<h1 class="ml-32 text-[12.5vw] font-mincho leading-[125%] tracking-[1.8%]">
+		<!-- FV -->
+		<!-- <div class="flex items-center w-screen h-screen py-[10vw]"> -->
+		<div class="flex w-screen h-screen py-[12rem]">
+			<!-- <h1 class="ml-32 text-[12.5vw] font-mincho leading-[125%] tracking-[1.8%]"> -->
+			<h1 class="ml-32 text-[16rem] font-mincho leading-[125%] tracking-[1.8%]">
 				デジタル時代の<br/>
 				門出を、<br/>
 				私たちと一緒に。
 			</h1>
 		</div>
+		<!-- FEATURE -->
+		<section class="mt-[14rem] w-defaultLayout m-auto">
+			<div class="mb-24 grid grid-cols-[1fr_auto] gap-12 items-end">
+				<div class="">
+					<h2 class="mb-8 text-sectionEnTitle text-key">
+						Feature
+					</h2>
+					<h3 class="mb-16 text-[4.8rem] font-mincho">
+						私たちには選ばれる理由が<br>
+						3つあります
+					</h3>
+					<p class="w-[40rem] text-defaultText">
+						もしあればここにそれを説明するテキストが入ってきますからね。入れるようにしておきましょうね。
+						まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。
+					</p>
+				</div>
+				<Link href="/feature" text="特長をくわしく見る" />
+			</div>
+			<div class="">
+				<ul class="grid grid-cols-3 gap-8">
+					{featureList.map((feature) => (
+						<li class="">
+							<Image src={feature.image} alt={feature.title} width={10} height={10} class="w-full mb-4" />
+							<p class="text-2xl font-mincho">{feature.title}</p>
+						</li>
+					))}
+				</ul>
+			</div>
+		</section>
 	</main>
 </Layout>
 

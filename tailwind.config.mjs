@@ -24,12 +24,20 @@ export default {
 						lineHeight: "2",
 					}
 				],
+				sectionEnTitle: [
+					"1.8rem",
+					{
+						fontWeight: "Regular",
+						fontFamily: "urbanist",
+						lineHeight: "1.4",
+					}
+				],
 
 			},
 			fontFamily: {
 				"sans": ['Noto Sans JP', ...defaultTheme.fontFamily.sans],
-				"mincho": '"BIZ UDPMincho"'
-				,
+				"mincho": '"BIZ UDPMincho"',
+				"urbanist": '"Urbanist"',
 			},
 		},
 	},

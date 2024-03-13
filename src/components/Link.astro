@@ -1,0 +1,17 @@
+---
+import Image from 'astro/components/Image.astro'
+
+interface Props {
+  href: string
+  text: string
+}
+
+const {href, text} = Astro.props
+---
+
+<a href={href} class="flex items-center gap-8">
+    <span class="text-2xl font-medium underline underline-offset-1">
+        {text}
+    </span>
+    <Image src="/assets/icon/arrow.svg" alt="arrow" width={16} height={16.19} class="w-7 h-7" />
+</a>
