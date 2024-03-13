@@ -1,0 +1,15 @@
+---
+const {titleEn, titleJa, description} = Astro.props
+---
+
+<section class="px-[10.8rem] pb-24 border-b border-lineGray">
+    <h1 class="mb-10 text-sectionEnTitle text-key">
+        {titleEn}
+    </h1>
+    <div class="grid grid-cols-[1fr_56rem] gap-24">
+        <h2 class="text-[4.2rem] font-mincho whitespace-break-spaces">{titleJa}</h2>
+        <p class="text-defaultText">
+            {description}
+        </p>
+    </div>
+</section>

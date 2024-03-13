@@ -1,15 +1,22 @@
 ---
 import Breadcrumb from '../../components/Breadcrumb.astro';
+import Fv from '../../components/section/Fv.astro';
 import Layout from '../../layouts/Layout.astro';
 ---
 
 <Layout title="feature">
     <main>
-        <Breadcrumb
-            lists={[
-                { name: "ホーム", path: "/" },
-                { name: "特長"}
-            ]}
-        />
+        <div class="flex flex-col gap-28 w-defaultLayout m-auto mt-64">
+            <Breadcrumb
+                lists={[
+                    { name: "ホーム", path: "/" },
+                    { name: "特長"}
+                ]}
+            />
+            <Fv
+                titleEn="Feature"
+                titleJa="新庄プロダクトサービス\nの特長"
+                description="もしあればここにそれを説明するテキストが入ってきますからね。入れるようにしておきましょうね。まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。"
+            />
     </main>
 </Layout>
