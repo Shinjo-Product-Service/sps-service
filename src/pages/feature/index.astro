@@ -1,0 +1,200 @@
+---
+import Image from 'astro/components/Image.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import Fv from '../../components/section/Fv.astro';
+import Layout from '../../layouts/Layout.astro';
+
+const pointList = [
+    {
+        title: "自社の名刺となるWebサイトを持続的に",
+        description: "もしあればここにそれを説明するテキストが入ってきますからね。入れるようにしておきましょうね。まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。",
+        image: "/assets/images/feature/point_1.jpg",
+        alt: "ポイント1"
+    },
+    {
+        title: "魅力を伝える手段としての自社紹介映像",
+        description: "もしあればここにそれを説明するテキストが入ってきますからね。入れるようにしておきましょうね。まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。",
+        image: "/assets/images/feature/point_2.jpg",
+        alt: "ポイント2"
+    },
+    {
+        title: "採用も販売もSNSでより効果的に",
+        description: "もしあればここにそれを説明するテキストが入ってきますからね。入れるようにしておきましょうね。まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。",
+        image: "/assets/images/feature/point_3.jpg",
+        alt: "ポイント3"
+    },
+        {
+        title: "地方企業の最も大きな課題は採用",
+        description: "もしあればここにそれを説明するテキストが入ってきますからね。入れるようにしておきましょうね。まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。",
+        image: "/assets/images/feature/point_4.jpg",
+        alt: "ポイント4"
+    }
+]
+
+const trustList = [
+    {
+        label: "映像制作・営業",
+        name: "奥山 健太郎",
+        description: "もしあればここにそれを説明するテキストが入ってきますからね。入れるようにしておきましょうね。まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。",
+        image: "/assets/images/feature/trust_1.jpg",
+        alt: "奥山 健太郎"
+    },
+    {
+        label: "Webサイト制作",
+        name: "小森 脩平",
+        description: "もしあればここにそれを説明するテキストが入ってきますからね。入れるようにしておきましょうね。まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。",
+        image: "/assets/images/feature/trust_2.jpg",
+        alt: "小森 脩平"
+    },
+]
+---
+
+<Layout title="feature">
+    <main>
+        <!-- FV -->
+        <div class="flex flex-col gap-28 w-defaultLayout m-auto mt-64">
+            <Breadcrumb
+                lists={[
+                    { name: "ホーム", path: "/" },
+                    { name: "特長"}
+                ]}
+            />
+            <Fv
+                titleEn="Feature"
+                titleJa="新庄プロダクトサービス\nの特長"
+                description="もしあればここにそれを説明するテキストが入ってきますからね。入れるようにしておきましょうね。まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。"
+            />
+        </div>
+        <!-- INTRO -->
+        <section class="grid grid-cols-2 gap-24 w-mdLayout m-auto mt-56">
+            <div class="py-4">
+                <h2 class="mb-8 text-[2.6rem] font-mincho leading-relaxed ">
+                    低価格で地方の中小企業のデジタル化を<br>
+                    促進することで、<br>
+                    人材不足や集客の課題を解決します。
+                </h2>
+                <p class="text-[1.5rem] leading-loose">
+                    もしあればここにそれを説明するテキストが入ってきますからね。
+                    入れるようにしておきましょうね。
+                    まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。
+                </p>
+            </div>
+            <Image
+                src="/assets/images/feature/intro.jpg"
+                alt="イントロ"
+                width={502}
+                height={319.67}
+                class=""
+            />
+        </section>
+        <!-- WORRIES -->
+        <section class="flex flex-col items-center w-smLayout m-auto mt-56 p-20 border border-lineGray rounded-2xl">
+            <h2 class="w-full mb-16 pb-16 text-[2.4rem] text-center font-mincho border-b border-lineGray">
+                こんなお悩みはありませんか？
+            </h2>
+            <ul class="grid grid-cols-2 gap-x-16 gap-y-6 text-[1.5rem]">
+                <li class="">
+                    ・自社らしさがあるWebサイトが欲しいけど高い
+                </li>
+                <li class="">
+                    ・自社の魅力的な見せ方がわからない
+                </li>
+                <li class="">
+                    ・採用候補者に自社をわかりやすく伝えたい
+                </li>
+                <li class="">
+                    ・今の時代SNSをやっていないと不安
+                </li>
+                <li class="">
+                    ・採用候補者が集まらない
+                </li>
+                <li class="">
+                    ・社内でデジタルに詳しい人材がいない
+                </li>
+            </ul>
+        </section>
+        <!-- POINT -->
+        <section class="w-defaultLayout m-auto mt-56">
+            <div class="flex flex-col items-center">
+                <p class="
+                    flex items-center gap-4 mb-10 text-[1.5rem] text-textGray 
+                    before:content-[''] before:display before:w-3 before:h-3 before:bg-key before:rounded-full
+                ">
+                    デジタル化に成功するための4つのポイント
+                </p>
+                <h2 class="text-[3.2rem] font-mincho text-center leading-loose">
+                    地方のデジタル課題の解決は低コストで持続的に<br>
+                    多角的なサポートが不可欠です
+                </h2>
+            </div>
+            <div class="mt-24">
+                <ol class="flex flex-col gap-12">
+                    {pointList.map((point, index) => {
+                        const isOdd = index % 2 === 1;
+                        return  <li class="grid grid-cols-2 items-center gap-32">
+                                    <div class={isOdd ? "order-2" : "order-1"}>
+                                        <span class="text-[1.4rem] text-key font-urbanist">
+                                            0{index + 1}
+                                        </span>
+                                        <h3 class="mt-8 mb-12 text-[2.6rem] font-mincho">
+                                            {point.title}
+                                        </h3>
+                                        <p class="text-[1.5rem] leading-loose">
+                                            {point.description}
+                                        </p>
+                                    </div>
+                                    <Image 
+                                        src={point.image}
+                                        alt={point.alt}
+                                        width={1040}
+                                        height={680}
+                                        class={`${isOdd ? "order-1" : "order-2"} w-full`}
+                                    />
+                                </li>
+                    })}
+                </ol>
+            </div>
+        </section>
+        <!-- TRUST -->
+        <section class="w-defaultLayout m-auto mt-56 mb-64">
+            <div class="relative flex">
+                <p class="
+                    absolute top-4 flex items-center gap-4 mb-10 text-[1.5rem] text-textGray 
+                    before:content-[''] before:display before:w-3 before:h-3 before:bg-key before:rounded-full
+                ">
+                    信頼の理由
+                </p>
+                <h2 class="w-smLayout m-auto text-[3.6rem] font-mincho leading-relaxed">
+                    Webサイト ・ 映像制作業界での<br>
+                    豊富な経験と丁寧な対応
+                </h2>
+            </div>
+            <div class="w-smLayout m-auto mt-24">
+                <ul class="flex flex-col gap-16">
+                    {trustList.map((trust, index) => 
+                        <li class="grid grid-cols-2 gap-24">
+                            <div class="py-6">
+                                <span class="px-4 py-2 text-[1.2rem] font-normal border border-lineGray rounded-lg">
+                                    {trust.label}
+                                </span>
+                                <h3 class="mt-10 mb-8 text-[2.4rem] font-mincho">
+                                    {trust.name}
+                                </h3>
+                                <p class="text-[1.5rem] leading-loose">
+                                    {trust.description}
+                                </p>
+                            </div>
+                            <Image 
+                                src={trust.image}
+                                alt={trust.alt}
+                                width={305}
+                                height={420}
+                                class="w-full"
+                            />
+                        </li>
+                    )}
+                </ul>
+            </div>
+        </section>
+    </main>
+</Layout>
