@@ -17,6 +17,7 @@ export default {
         gray: "#AEAEAE",
         white: "#FCFCFC",
         lineGray: "#D3D3D3",
+        textGray: "#565656",
       },
       fontSize: {
         defaultText: [
