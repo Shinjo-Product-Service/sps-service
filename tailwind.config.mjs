@@ -9,6 +9,7 @@ export default {
       width: {
         defaultLayout: "128rem",
         mdLayout: "106.4rem",
+        smLayout: "84.6rem",
       },
       colors: {
         default: "#242424",
