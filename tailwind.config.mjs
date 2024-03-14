@@ -8,6 +8,7 @@ export default {
     extend: {
       width: {
         defaultLayout: "128rem",
+        mdLayout: "106.4rem",
       },
       colors: {
         default: "#242424",
