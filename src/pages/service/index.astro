@@ -98,5 +98,68 @@ const serviceList = [
                 </ul>
             </div>
         </section>
+        <!-- PRICE -->
+        <section class="grid grid-cols-[1fr_auto] gap-32 items-end w-defaultLayout m-auto mt-56">
+            <div class="">
+                <h2 class="mb-8 text-[3.2rem] font-mincho">
+                    基本料金
+                </h2>
+                <p class="text-defaultText">
+                    もしあればここにそれを説明するテキストが入ってきますからね。
+                    入れるようにしておきましょうね。
+                    まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。
+                </p>
+            </div>
+            <div class="flex gap-8 items-center">
+                <div class="flex flex-col items-center justify-between min-w-[22rem] min-h-48 p-10 border border-lineGray rounded-xl">
+                    <h3 class="mb-4 text-[1.4rem]">
+                        月額費用
+                    </h3>
+                    <p class="text-[1.8rem] font-medium">
+                        プランごとの料金
+                    </p>
+                </div>
+                <Image 
+                    src="/assets/icon/plus.svg"
+                    alt="プラスアイコン"
+                    width={16}
+                    height={16}
+                    class="w-6 h-6"
+                />
+                <div class="flex flex-col items-center min-w-[22rem] min-h-48 p-10 text-key border border-key rounded-xl">
+                    <h3 class="mb-4 text-[1.4rem] ">
+                        初期費用
+                    </h3>
+                    <p class="flex items-end gap-2">
+                        <span class="text-[2.8rem] font-urbanist font-light leading-tight">
+                            0
+                        </span>
+                        <span class="text-[1.2rem] font-normal leading-loose">
+                            円
+                        </span>
+                    </p>
+                </div>
+                <Image 
+                    src="/assets/icon/plus.svg"
+                    alt="プラスアイコン"
+                    width={16}
+                    height={16}
+                    class="w-6 h-6"
+                />
+               <div class="flex flex-col items-center min-w-[22rem] min-h-48 p-10 text-key border border-key rounded-xl">
+                    <h3 class="mb-4 text-[1.4rem] ">
+                        解約費用
+                    </h3>
+                    <p class="flex items-end gap-2">
+                        <span class="text-[2.8rem] font-urbanist font-light leading-tight">
+                            0
+                        </span>
+                        <span class="text-[1.2rem] font-normal leading-loose">
+                            円
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </section>
     </main>
 </Layout>

@@ -1,6 +1,7 @@
 @import "@fontsource/noto-sans-jp/300.css";
 @import "@fontsource/noto-sans-jp/500.css";
 @import "@fontsource/biz-udpmincho";
+@import "@fontsource/urbanist/300.css";
 
 @tailwind base;
 @tailwind components;
