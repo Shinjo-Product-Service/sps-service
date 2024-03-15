@@ -1,0 +1,102 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import Fv from '../../components/section/Fv.astro';
+import Image from 'astro/components/Image.astro';
+
+const serviceList = [
+    {
+        image: "/assets/images/service/service_1.jpg",
+        alt: "サービスの紹介画像",
+        title: "Webサイト制作",
+        description: "もしあればここにそれを説明するテキストが入ってきますからね。入れるようにしておきましょうね。まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。"
+    },
+    {
+        image: "/assets/images/service/service_2.jpg",
+        alt: "サービスの紹介画像",
+        title: "映像制作",
+        description: "もしあればここにそれを説明するテキストが入ってきますからね。入れるようにしておきましょうね。まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。"
+    },
+    {
+        image: "/assets/images/service/service_3.jpg",
+        alt: "サービスの紹介画像",
+        title: "SNS運用代行",
+        description: "もしあればここにそれを説明するテキストが入ってきますからね。入れるようにしておきましょうね。まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。"
+    },
+    {
+        image: "/assets/images/service/service_4.jpg",
+        alt: "サービスの紹介画像",
+        title: "名刺 ・ チラシデザイン",
+        description: "もしあればここにそれを説明するテキストが入ってきますからね。入れるようにしておきましょうね。まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。"
+    },
+]
+---
+
+<Layout title="service">
+    <main>
+        <!-- FV -->
+        <div class="flex flex-col gap-28 w-defaultLayout m-auto mt-64">
+            <Breadcrumb
+                lists={[
+                    { name: "ホーム", path: "/" },
+                    { name: "サービス"}
+                ]}
+            />
+            <Fv
+                titleEn="Service"
+                titleJa="ご提供サービス"
+                description="もしあればここにそれを説明するテキストが入ってきますからね。入れるようにしておきましょうね。まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。"
+            />
+        </div>
+        <!-- INTRO -->
+        <section class="mt-48">
+            <div class="w-mdLayout m-auto">
+                <h2 class="mb-8 text-[3.2rem] font-mincho leading-relaxed">
+                    デジタル課題を解決する<br>
+                    多面的なコンテンツと手法を提供します。
+                </h2>
+                <p class="text-[1.5rem] leading-loose">
+                    もしあればここにそれを説明するテキストが入ってきますからね。<br>
+                    入れるようにしておきましょうね。<br>
+                    まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。
+                </p>
+            </div>
+            <Image
+                src="/assets/images/service/intro.jpg"
+                alt="サービスの紹介画像"
+                width={1440}
+                height={480}
+                class="w-full h-[48rem] mt-24"
+            />
+        </section>
+        <!-- SERVICE -->
+        <section class="w-defaultLayout m-auto mt-56">
+            <h2 class="mb-12 text-[2.8rem] font-mincho">
+                デジタル化の支援
+            </h2>
+            <div class="">
+                <ul class="grid grid-cols-4 gap-8">
+                    {serviceList.map((service) =>
+                    <li class="">
+                        <Image
+                            src={service.image}
+                            alt={service.alt}
+                            width={305}
+                            height={200}
+                            class="w-full h-[20rem] object-cover"
+                        />
+                        <div class="mt-8">
+                            <h3 class="mb-2 text-[1.7rem] font-mincho">
+                                {service.title}
+                            </h3>
+                            <p class="text-[1.3rem] leading-relaxed">
+                                {service.description}
+                            </p>
+                        </div>
+                    </li>
+                    )}
+                </ul>
+            </div>
+        </section>
+    </main>
+</Layout>
