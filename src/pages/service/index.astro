@@ -30,6 +30,42 @@ const serviceList = [
         description: "もしあればここにそれを説明するテキストが入ってきますからね。入れるようにしておきましょうね。まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。"
     },
 ]
+
+const planList = [
+    {
+        name: "ベーシックプラン",
+        description: "まずはWebサイトだけでも用意したい",
+        price: "8,800",
+        contensTitle: "すべてお任せあれ",
+        contents: [
+            "6ページ分のテンプレートWebサイト",
+            "SSL(通信の暗号化)",
+            "月5回程度の更新ご依頼",
+            "スマホ最適化",
+            "取材・撮影"
+        ]
+    },
+    {
+        name: "スタンダードプラン",
+        description: "自社のオリジナリティをアピール・発信",
+        price: "22,000",
+        contensTitle: "ベーシックプランに加えて",
+        contents: [
+            "個別オリジナルデザインWebサイト",
+            "SNS運用代行",
+        ]
+    },
+    {
+        name: "プレミアムプラン",
+        description: "コンテンツでもっとわかりやすく魅力的に",
+        price: "44,000",
+        contensTitle: "スタンダードプランに加えて",
+        contents: [
+            "会社紹介動画の制作とWebサイトへの埋め込み",
+            "会社紹介スライドの制作とWebサイトへの埋め込み",
+        ]
+    },
+]
 ---
 
 <Layout title="service">
@@ -160,6 +196,58 @@ const serviceList = [
                     </p>
                 </div>
             </div>
+        </section>
+        <!-- PLAN -->
+        <section class="w-mdLayout m-auto mt-56">
+            <div class="grid grid-cols-[auto_1fr] gap-40 items-end">
+                <h2 class="text-[3.2rem] font-mincho leading-relaxed">
+                    デジタルコンテンツ<br>
+                    月額定額プラン
+                </h2>
+                <p class="text-defaultText">
+                    制作費無料で、かかるのは月々の更新費用のみです。<br>
+                    自社の課題にぴったりなプランをご提供させていただきます。
+                </p>
+            </div>
+            <ul class="grid grid-cols-3 gap-8 mt-20">
+                {planList.map((plan) =>
+                    <li class="grid grid-rows-[auto_1fr_auto] items-center justify-between gap-10 p-12 border border-lineGray rounded-2xl">
+                        <div class="h-full">
+                            <h3 class="mb-8 text-[2.2rem] font-medium text-center">
+                                {plan.name}
+                            </h3>
+                            <p class="mb-6 text-[1.4rem] text-center">
+                                {plan.description}
+                            </p>
+                            <p class="flex justify-center items-end gap-4">
+                                <span class="text-[2.4rem] font-urbanist font-medium leading-tight">
+                                    {plan.price}
+                                </span>
+                                <span class="text-[1.3rem] leading-loose">
+                                    円 / 月 〜
+                                </span>
+                            </p>
+                        </div>
+                        <div class="flex flex-col items-center h-full px-12 py-6 border border-lineGray rounded-xl">
+                            <h4 class="mb-4 text-[1.4rem] font-medium">
+                                {plan.contensTitle}
+                            </h4>
+                            <ul class="flex flex-col gap-3">
+                                {plan.contents.map((content) =>
+                                    <li class="text-[1.3rem] leading-relaxed list-disc list-outside">
+                                        {content}
+                                    </li>
+                                )}
+                            </ul>
+                        </div>
+                        <a 
+                            href="/contact" 
+                            class="flex justify-center w-full p-4 text-[1.3rem] text-white font-normal bg-key rounded-full">
+                            申し込む
+                        </a>
+                    </li>
+                )}
+            </ul>
         </section>
     </main>
 </Layout>
