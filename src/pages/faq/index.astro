@@ -1,0 +1,100 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import Fv from '../../components/section/Fv.astro';
+import Image from 'astro/components/Image.astro';
+import FaqItem from '../../components/faq/FaqItem.astro';
+
+const faqList = [
+    {
+        title: "サブスクプランについて",
+        items: [
+            {
+                question: "制作期間はどのくらいになりますか？",
+                answer: "こちらも規模によりますが、通常、5～6カ月ほどになります。長期化する場合には、フェーズを分けて公開することも可能です。公開時期の希望があれば、お問い合わせ時にお申しつけください。"
+            },
+            {
+                question: "制作期間はどのくらいになりますか？",
+                answer: "こちらも規模によりますが、通常、5～6カ月ほどになります。長期化する場合には、フェーズを分けて公開することも可能です。公開時期の希望があれば、お問い合わせ時にお申しつけください。"
+            },
+            {
+                question: "制作期間はどのくらいになりますか？",
+                answer: "こちらも規模によりますが、通常、5～6カ月ほどになります。長期化する場合には、フェーズを分けて公開することも可能です。公開時期の希望があれば、お問い合わせ時にお申しつけください。"
+            },
+        ]
+    },
+        {
+        title: "Webサイトについて",
+        items: [
+            {
+                question: "制作期間はどのくらいになりますか？",
+                answer: "こちらも規模によりますが、通常、5～6カ月ほどになります。長期化する場合には、フェーズを分けて公開することも可能です。公開時期の希望があれば、お問い合わせ時にお申しつけください。"
+            },
+            {
+                question: "制作期間はどのくらいになりますか？",
+                answer: "こちらも規模によりますが、通常、5～6カ月ほどになります。長期化する場合には、フェーズを分けて公開することも可能です。公開時期の希望があれば、お問い合わせ時にお申しつけください。"
+            },
+            {
+                question: "制作期間はどのくらいになりますか？",
+                answer: "こちらも規模によりますが、通常、5～6カ月ほどになります。長期化する場合には、フェーズを分けて公開することも可能です。公開時期の希望があれば、お問い合わせ時にお申しつけください。"
+            },
+        ]
+    },
+    {
+        title: "映像制作について",
+        items: [
+            {
+                question: "制作期間はどのくらいになりますか？",
+                answer: "こちらも規模によりますが、通常、5～6カ月ほどになります。長期化する場合には、フェーズを分けて公開することも可能です。公開時期の希望があれば、お問い合わせ時にお申しつけください。"
+            },
+            {
+                question: "制作期間はどのくらいになりますか？",
+                answer: "こちらも規模によりますが、通常、5～6カ月ほどになります。長期化する場合には、フェーズを分けて公開することも可能です。公開時期の希望があれば、お問い合わせ時にお申しつけください。"
+            },
+            {
+                question: "制作期間はどのくらいになりますか？",
+                answer: "こちらも規模によりますが、通常、5～6カ月ほどになります。長期化する場合には、フェーズを分けて公開することも可能です。公開時期の希望があれば、お問い合わせ時にお申しつけください。"
+            },
+        ]
+    },
+]
+---
+
+
+<Layout title="faq">
+    <main>
+        <!-- FV -->
+        <div class="flex flex-col gap-28 w-defaultLayout m-auto mt-64">
+            <Breadcrumb
+                lists={[
+                    { name: "ホーム", path: "/" },
+                    { name: "よくある質問"}
+                ]}
+            />
+            <Fv
+                titleEn="Faq"
+                titleJa="よくいただくご質問"
+                description="もしあればここにそれを説明するテキストが入ってきますからね。入れるようにしておきましょうね。まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。"
+            />
+        </div>
+        <!-- MAIN -->
+        <div class="flex flex-col gap-40 w-mdLayout m-auto mt-48 mb-64">
+            {faqList.map((item, index) =>
+                <section class="">
+                    <h2 class="mb-20 text-[2.8rem] font-mincho">
+                        {item.title}
+                    </h2>
+                    <ul class="flex flex-col gap-16">
+                        {item.items.map((faq, index) =>
+                            <FaqItem
+                                index={index}
+                                question={faq.question}
+                                answer={faq.answer}
+                            />
+                        )}
+                    </ul>
+                </section>
+            )}
+        </div>
+    </main>
+</Layout>

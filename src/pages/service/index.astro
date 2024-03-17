@@ -2,8 +2,8 @@
 import Layout from '../../layouts/Layout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import Fv from '../../components/section/Fv.astro';
+import FaqItem from '../../components/faq/FaqItem.astro';
 import Image from 'astro/components/Image.astro';
-import { fade } from 'astro:transitions';
 
 const faqList = [
     {
@@ -284,19 +284,24 @@ const flowList = [
             <div class="">
                 <ul class="flex flex-col gap-16">
                     {faqList.map((faq, index) => 
-                        <li class="grid grid-cols-[auto_1fr] gap-10 pb-16 px-5 border-b border-lineGray">
-                            <span class="text-[2rem] text-key font-urbanist leading-[185%]">
-                                0{index + 1}
-                            </span>
-                            <div class="">
-                                <h3 class="mb-3 text-[1.8rem] font-normal leading-loose">
-                                    {faq.question}
-                                </h3>
-                                <p class="text-defaultText">
-                                    {faq.answer}
-                                </p>
-                            </div>
-                        </li>
+                        <FaqItem
+                            index={index}
+                            question={faq.question}
+                            answer={faq.answer}
+                        />
+                        // <li class="grid grid-cols-[auto_1fr] gap-10 pb-16 px-5 border-b border-lineGray">
+                        //     <span class="text-[2rem] text-key font-urbanist font-extralight leading-[185%] tracking-wider">
+                        //         Q{index + 1}.
+                        //     </span>
+                        //     <div class="">
+                        //         <h3 class="mb-3 text-[1.8rem] font-normal leading-loose">
+                        //             {faq.question}
+                        //         </h3>
+                        //         <p class="text-defaultText">
+                        //             {faq.answer}
+                        //         </p>
+                        //     </div>
+                        // </li>
                     )}
                 </ul>
             </div>
