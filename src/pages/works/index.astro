@@ -1,0 +1,91 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import Fv from '../../components/section/Fv.astro';
+import Image from 'astro/components/Image.astro';
+
+const workInformations = [
+    {
+        image: {
+            src: "/assets/images/home/work.jpg",
+            alt: "制作実績",
+            width: 1200,
+            height: 680,
+        },
+        title: "ブランディングした商品をEC機能を導入して販売",
+        client: {
+            icon: {
+                src: "/assets/images/home/work_icon.png",
+                width: 52,
+                height: 36,
+            },
+            name: "泉菜株式会社"
+        },
+        info: [
+            {
+                title: "業種",
+                description: "農業"
+            },
+            {
+                title: "従業員数",
+                description: "1~10人"
+            },
+            {
+                title: "課題",
+                description: "商品のブランドアピール不足と販売ルートの不足"
+            },
+        ]
+    }
+]
+---
+
+<Layout title="works">
+    <main>
+        <!-- FV -->
+        <div class="flex flex-col gap-28 w-defaultLayout m-auto mt-64">
+            <Breadcrumb
+                lists={[
+                    { name: "ホーム", path: "/" },
+                    { name: "実績"}
+                ]}
+            />
+            <Fv
+                titleEn="Works"
+                titleJa="これまでの実績"
+                description="もしあればここにそれを説明するテキストが入ってきますからね。入れるようにしておきましょうね。まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。"
+            />
+        </div>
+        <!-- MAIN -->
+        <div class="mt-32 mb-64">
+            <ul class="grid grid-cols-3 gap-x-8 gap-y-24 w-defaultLayout m-auto">
+                {workInformations.map((workInformation, index) => (
+                    <li class="">
+                        <a href="" class="">
+                            <Image src={workInformation.image.src} alt={workInformation.image.alt} width={workInformation.image.width} height={workInformation.image.height} class="w-full" />
+                            <div class="mt-8">
+                                <h4 class="mb-8 pb-6 text-[1.8rem] font-mincho border-b border-lineGray">
+                                    {workInformation.title}
+                                </h4>
+                                <div class="flex gap-3 w-fit px-5 py-3 border border-lineGray rounded-full">
+                                    <Image src={workInformation.client.icon.src} alt={workInformation.client.name} width={workInformation.client.icon.width} height={workInformation.client.icon.height} class="w-[2.6rem] h-auto" />
+                                    <span class="text-[1.3rem]">
+                                        {workInformation.client.name}
+                                    </span>
+                                </div>
+                                <div class="flex flex-col gap-2 mt-5">
+                                    {workInformation.info.map((info) => (
+                                        <dl class="grid grid-cols-[6rem_1fr] gap-8">
+                                            <dt class="text-[1.3rem] text-gray">{info.title}</dt>
+                                            <dd class="text-[1.3rem]">{info.description}</dd>
+                                        </dl>
+                                    ))}
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                ))}
+
+            </ul>
+        </div>
+    </main>
+</Layout>

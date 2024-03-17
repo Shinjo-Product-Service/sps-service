@@ -1,0 +1,336 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import Fv from '../../components/section/Fv.astro';
+import Image from 'astro/components/Image.astro';
+import { fade } from 'astro:transitions';
+
+const faqList = [
+    {
+        question: "制作期間はどのくらいになりますか？",
+        answer: "こちらも規模によりますが、通常、5～6カ月ほどになります。長期化する場合には、フェーズを分けて公開することも可能です。公開時期の希望があれば、お問い合わせ時にお申しつけください。"
+    },
+    {
+        question: "制作期間はどのくらいになりますか？",
+        answer: "こちらも規模によりますが、通常、5～6カ月ほどになります。長期化する場合には、フェーズを分けて公開することも可能です。公開時期の希望があれば、お問い合わせ時にお申しつけください。"
+    },
+    {
+        question: "制作期間はどのくらいになりますか？",
+        answer: "こちらも規模によりますが、通常、5～6カ月ほどになります。長期化する場合には、フェーズを分けて公開することも可能です。公開時期の希望があれば、お問い合わせ時にお申しつけください。"
+    },
+]
+
+const serviceList = [
+    {
+        image: "/assets/images/service/service_1.jpg",
+        alt: "サービスの紹介画像",
+        title: "Webサイト制作",
+        description: "もしあればここにそれを説明するテキストが入ってきますからね。入れるようにしておきましょうね。まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。"
+    },
+    {
+        image: "/assets/images/service/service_2.jpg",
+        alt: "サービスの紹介画像",
+        title: "映像制作",
+        description: "もしあればここにそれを説明するテキストが入ってきますからね。入れるようにしておきましょうね。まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。"
+    },
+    {
+        image: "/assets/images/service/service_3.jpg",
+        alt: "サービスの紹介画像",
+        title: "SNS運用代行",
+        description: "もしあればここにそれを説明するテキストが入ってきますからね。入れるようにしておきましょうね。まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。"
+    },
+    {
+        image: "/assets/images/service/service_4.jpg",
+        alt: "サービスの紹介画像",
+        title: "名刺 ・ チラシデザイン",
+        description: "もしあればここにそれを説明するテキストが入ってきますからね。入れるようにしておきましょうね。まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。"
+    },
+]
+
+const planList = [
+    {
+        name: "ベーシックプラン",
+        description: "まずはWebサイトだけでも用意したい",
+        price: "8,800",
+        contensTitle: "すべてお任せあれ",
+        contents: [
+            "6ページ分のテンプレートWebサイト",
+            "SSL(通信の暗号化)",
+            "月5回程度の更新ご依頼",
+            "スマホ最適化",
+            "取材・撮影"
+        ]
+    },
+    {
+        name: "スタンダードプラン",
+        description: "自社のオリジナリティをアピール・発信",
+        price: "22,000",
+        contensTitle: "ベーシックプランに加えて",
+        contents: [
+            "個別オリジナルデザインWebサイト",
+            "SNS運用代行",
+        ]
+    },
+    {
+        name: "プレミアムプラン",
+        description: "コンテンツでもっとわかりやすく魅力的に",
+        price: "44,000",
+        contensTitle: "スタンダードプランに加えて",
+        contents: [
+            "会社紹介動画の制作とWebサイトへの埋め込み",
+            "会社紹介スライドの制作とWebサイトへの埋め込み",
+        ]
+    },
+]
+
+const flowList = [
+    "お問い合わせ・ご連絡",
+    "お伺いしてご要望を\nヒアリング",
+    "お客様にあった\nプランごとのご対応",
+]
+---
+
+<Layout title="service">
+    <main>
+        <!-- FV -->
+        <div class="flex flex-col gap-28 w-defaultLayout m-auto mt-64">
+            <Breadcrumb
+                lists={[
+                    { name: "ホーム", path: "/" },
+                    { name: "サービス"}
+                ]}
+            />
+            <Fv
+                titleEn="Service"
+                titleJa="ご提供サービス"
+                description="もしあればここにそれを説明するテキストが入ってきますからね。入れるようにしておきましょうね。まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。"
+            />
+        </div>
+        <!-- INTRO -->
+        <section class="mt-48">
+            <div class="w-mdLayout m-auto">
+                <h2 class="mb-8 text-[3.2rem] font-mincho leading-relaxed">
+                    デジタル課題を解決する<br>
+                    多面的なコンテンツと手法を提供します。
+                </h2>
+                <p class="text-[1.5rem] leading-loose">
+                    もしあればここにそれを説明するテキストが入ってきますからね。<br>
+                    入れるようにしておきましょうね。<br>
+                    まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。
+                </p>
+            </div>
+            <Image
+                src="/assets/images/service/intro.jpg"
+                alt="サービスの紹介画像"
+                width={1440}
+                height={480}
+                class="w-full h-[48rem] mt-24"
+            />
+        </section>
+        <!-- SERVICE -->
+        <section class="w-defaultLayout m-auto mt-56">
+            <h2 class="mb-12 text-[2.8rem] font-mincho">
+                デジタル化の支援
+            </h2>
+            <div class="">
+                <ul class="grid grid-cols-4 gap-8">
+                    {serviceList.map((service) =>
+                    <li class="">
+                        <Image
+                            src={service.image}
+                            alt={service.alt}
+                            width={305}
+                            height={200}
+                            class="w-full h-[20rem] object-cover"
+                        />
+                        <div class="mt-8">
+                            <h3 class="mb-2 text-[1.7rem] font-mincho">
+                                {service.title}
+                            </h3>
+                            <p class="text-[1.3rem] leading-relaxed">
+                                {service.description}
+                            </p>
+                        </div>
+                    </li>
+                    )}
+                </ul>
+            </div>
+        </section>
+        <!-- PRICE -->
+        <section class="grid grid-cols-[1fr_auto] gap-32 items-end w-defaultLayout m-auto mt-56">
+            <div class="">
+                <h2 class="mb-8 text-[3.2rem] font-mincho">
+                    基本料金
+                </h2>
+                <p class="text-defaultText">
+                    もしあればここにそれを説明するテキストが入ってきますからね。
+                    入れるようにしておきましょうね。
+                    まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。
+                </p>
+            </div>
+            <div class="flex gap-8 items-center">
+                <div class="flex flex-col items-center justify-between min-w-[22rem] min-h-48 p-10 border border-lineGray rounded-xl">
+                    <h3 class="mb-4 text-[1.4rem]">
+                        月額費用
+                    </h3>
+                    <p class="text-[1.8rem] font-medium">
+                        プランごとの料金
+                    </p>
+                </div>
+                <Image 
+                    src="/assets/icon/plus.svg"
+                    alt="プラスアイコン"
+                    width={16}
+                    height={16}
+                    class="w-6 h-6"
+                />
+                <div class="flex flex-col items-center min-w-[22rem] min-h-48 p-10 text-key border border-key rounded-xl">
+                    <h3 class="mb-4 text-[1.4rem] ">
+                        初期費用
+                    </h3>
+                    <p class="flex items-end gap-2">
+                        <span class="text-[2.8rem] font-urbanist font-light leading-tight">
+                            0
+                        </span>
+                        <span class="text-[1.2rem] font-normal leading-loose">
+                            円
+                        </span>
+                    </p>
+                </div>
+                <Image 
+                    src="/assets/icon/plus.svg"
+                    alt="プラスアイコン"
+                    width={16}
+                    height={16}
+                    class="w-6 h-6"
+                />
+               <div class="flex flex-col items-center min-w-[22rem] min-h-48 p-10 text-key border border-key rounded-xl">
+                    <h3 class="mb-4 text-[1.4rem] ">
+                        解約費用
+                    </h3>
+                    <p class="flex items-end gap-2">
+                        <span class="text-[2.8rem] font-urbanist font-light leading-tight">
+                            0
+                        </span>
+                        <span class="text-[1.2rem] font-normal leading-loose">
+                            円
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- PLAN -->
+        <section class="w-mdLayout m-auto mt-56">
+            <div class="grid grid-cols-[auto_1fr] gap-40 items-end">
+                <h2 class="text-[3.2rem] font-mincho leading-relaxed">
+                    デジタルコンテンツ<br>
+                    月額定額プラン
+                </h2>
+                <p class="text-defaultText">
+                    制作費無料で、かかるのは月々の更新費用のみです。<br>
+                    自社の課題にぴったりなプランをご提供させていただきます。
+                </p>
+            </div>
+            <ul class="grid grid-cols-3 gap-8 mt-20">
+                {planList.map((plan) =>
+                    <li class="grid grid-rows-[auto_1fr_auto] items-center justify-between gap-10 p-12 border border-lineGray rounded-2xl">
+                        <div class="h-full">
+                            <h3 class="mb-8 text-[2.2rem] font-medium text-center">
+                                {plan.name}
+                            </h3>
+                            <p class="mb-6 text-[1.4rem] text-center">
+                                {plan.description}
+                            </p>
+                            <p class="flex justify-center items-end gap-4">
+                                <span class="text-[2.4rem] font-urbanist font-medium leading-tight">
+                                    {plan.price}
+                                </span>
+                                <span class="text-[1.3rem] leading-loose">
+                                    円 / 月 〜
+                                </span>
+                            </p>
+                        </div>
+                        <div class="flex flex-col items-center h-full px-12 py-6 border border-lineGray rounded-xl">
+                            <h4 class="mb-4 text-[1.4rem] font-medium">
+                                {plan.contensTitle}
+                            </h4>
+                            <ul class="flex flex-col gap-3">
+                                {plan.contents.map((content) =>
+                                    <li class="text-[1.3rem] leading-relaxed list-disc list-outside">
+                                        {content}
+                                    </li>
+                                )}
+                            </ul>
+                        </div>
+                        <a 
+                            href="/contact" 
+                            class="flex justify-center w-full p-4 text-[1.3rem] text-white font-normal bg-key rounded-full">
+                            申し込む
+                        </a>
+                    </li>
+                )}
+            </ul>
+        </section>
+        <!-- FAQ -->
+        <section class="grid grid-cols-[auto_1fr] gap-24 justify-between w-defaultLayout m-auto mt-56 pl-[10.8rem]">
+            <div class="w-[36rem] py-2">
+                <h2 class="mb-10 text-sectionTitle font-mincho">
+                    よくあるご質問
+                </h2>
+                <p class="text-defaultText">
+                    皆様からよくいただくご質問をまとめています。
+                </p>
+            </div>
+            <div class="">
+                <ul class="flex flex-col gap-16">
+                    {faqList.map((faq, index) => 
+                        <li class="grid grid-cols-[auto_1fr] gap-10 pb-16 px-5 border-b border-lineGray">
+                            <span class="text-[2rem] text-key font-urbanist leading-[185%]">
+                                0{index + 1}
+                            </span>
+                            <div class="">
+                                <h3 class="mb-3 text-[1.8rem] font-normal leading-loose">
+                                    {faq.question}
+                                </h3>
+                                <p class="text-defaultText">
+                                    {faq.answer}
+                                </p>
+                            </div>
+                        </li>
+                    )}
+                </ul>
+            </div>
+        </section>
+        <!-- FLOW -->
+        <section class="w-mdLayout m-auto mt-56 mb-64">
+            <div class="w-[40rem]">
+                <h2 class="mb-8 text-sectionTitle font-mincho">
+                    ご利用までの流れ
+                </h2>
+                <p class="text-defaultText">
+                    寄り添いながら制作から納品まで丁寧にご対応をさせていただきます。
+                </p>
+            </div>
+            <div class="flex gap-12 mt-16">
+                {flowList.map((flow, index) => 
+                <>
+                    <div class="flex justify-center items-center w-full aspect-square border border-lineGray rounded-full">
+                        <span class="text-[1.5rem] text-center leading-loose whitespace-break-spaces">
+                            {flow}
+                        </span>
+                    </div>
+                    {index !== flowList.length - 1 && (
+                        <Image
+                            src="/assets/icon/arrow.svg"
+                            alt="矢印"
+                            width={10}
+                            height={16.19}
+                            class="w-24"
+                        />
+                    )}
+                </>
+                )}
+            </div>
+        </section>
+    </main>
+</Layout>

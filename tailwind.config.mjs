@@ -27,11 +27,17 @@ export default {
             lineHeight: "2",
           },
         ],
+        sectionTitle: [
+          "3.2rem",
+          {
+            fontWeight: "normal",
+            lineHeight: "1.8",
+          },
+        ],
         sectionEnTitle: [
           "1.8rem",
           {
             fontWeight: "Regular",
-            fontFamily: "urbanist",
             lineHeight: "1.4",
           },
         ],
