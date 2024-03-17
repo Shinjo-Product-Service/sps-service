@@ -82,6 +82,12 @@ const planList = [
         ]
     },
 ]
+
+const flowList = [
+    "お問い合わせ・ご連絡",
+    "お伺いしてご要望を\nヒアリング",
+    "お客様にあった\nプランごとのご対応",
+]
 ---
 
 <Layout title="service">
@@ -296,8 +302,35 @@ const planList = [
             </div>
         </section>
         <!-- FLOW -->
-        <section class="">
-
+        <section class="w-mdLayout m-auto mt-56 mb-64">
+            <div class="w-[40rem]">
+                <h2 class="mb-8 text-sectionTitle font-mincho">
+                    ご利用までの流れ
+                </h2>
+                <p class="text-defaultText">
+                    寄り添いながら制作から納品まで丁寧にご対応をさせていただきます。
+                </p>
+            </div>
+            <div class="flex gap-12 mt-16">
+                {flowList.map((flow, index) => 
+                <>
+                    <div class="flex justify-center items-center w-full aspect-square border border-lineGray rounded-full">
+                        <span class="text-[1.5rem] text-center leading-loose whitespace-break-spaces">
+                            {flow}
+                        </span>
+                    </div>
+                    {index !== flowList.length - 1 && (
+                        <Image
+                            src="/assets/icon/arrow.svg"
+                            alt="矢印"
+                            width={10}
+                            height={16.19}
+                            class="w-24"
+                        />
+                    )}
+                </>
+                )}
+            </div>
         </section>
     </main>
 </Layout>
