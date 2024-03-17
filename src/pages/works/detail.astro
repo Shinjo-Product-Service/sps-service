@@ -1,0 +1,118 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import Fv from '../../components/section/Fv.astro';
+import Image from 'astro/components/Image.astro';
+
+const info = [
+    {
+        title: "業種",
+        description: "農業"
+    },
+    {
+        title: "従業員数",
+        description: "1~10人"
+    },
+    {
+        title: "課題",
+        description: "商品のブランドアピール不足と販売ルートの不足"
+    },
+]
+
+const articleInfos = [
+    {
+        title: "導入前の課題",
+        oroginTitle: "自社の野菜のブランド価値が伝わらない",
+        description: "これこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっていますこれこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっていますこれこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっていますこれこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっていますこれこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっています。",
+        image: {
+            src: "/assets/images/home/work.jpg",
+            alt: "泉菜株式会社",
+            width: 420,
+            height: 360
+        }
+    },
+        {
+        title: "新庄プロダクトサービスを選んだ理由",
+        oroginTitle: "導入コストが課題だったけど無料なので試しに使ってみた",
+        description: "これこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっていますこれこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっていますこれこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっていますこれこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっていますこれこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっています。",
+        image: {
+            src: "/assets/images/home/work.jpg",
+            alt: "泉菜株式会社",
+            width: 420,
+            height: 360
+        }
+    },
+        {
+        title: "導入後の成果・効果",
+        oroginTitle: "自社のECサイトで内製化することで売り上げ150%",
+        description: "これこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっていますこれこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっていますこれこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっていますこれこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっていますこれこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっています。",
+        image: {
+            src: "/assets/images/home/work.jpg",
+            alt: "泉菜株式会社",
+            width: 420,
+            height: 360
+        }
+    },
+]
+---
+
+<Layout title="works">
+    <main>
+        <!-- FV -->
+        <div class="flex flex-col gap-28 w-defaultLayout m-auto mt-64">
+            <Breadcrumb
+                lists={[
+                    { name: "ホーム", path: "/" },
+                    { name: "実績", path: "/works" },
+                    { name: "ブランディングした商品をEC機能を導入して販売" }
+                ]}
+            />
+            <div class="w-mdLayout m-auto mb-24 pb-24 border-b border-lineGray">
+                <div class="w-smLayout m-auto">
+                    <h1 class="mb-16 text-[3.6rem] font-mincho">
+                        ブランディングした商品をEC機能を導入して販売
+                    </h1>
+                    <div class="grid grid-cols-[auto_1fr] gap-16">
+                        <Image src="/assets/images/home/work.jpg" alt="泉菜株式会社" width={400} height={240} class="aspect-[1.618]" />
+                        <div class="w-full py-6">
+                            <div class="flex gap-3 w-fit px-5 py-3 border border-lineGray rounded-full">
+                                <Image src="/assets/images/home/work_icon.png" alt="泉菜株式会社" width={52} height={36} class="w-[2.6rem] h-auto" />
+                                <span class="text-[1.3rem]">
+                                    泉菜株式会社
+                                </span>
+                            </div>
+                            <div class="flex flex-col gap-4 w-fit mt-10">
+                                {info.map((item) => (
+                                    <dl class="grid grid-cols-[6rem_1fr] gap-8">
+                                        <dt class="text-[1.3rem] text-gray">{item.title}</dt>
+                                        <dd class="text-[1.3rem]">{item.description}</dd>
+                                    </dl>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <article class="w-smLayout m-auto mb-64">
+            <p class="text-defaultText">
+                これこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっていますこれこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっていますこれこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっていますこれこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっていますこれこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっています。
+            </p>
+            <ul class="flex flex-col gap-24 mt-32 ">
+                {articleInfos.map((item, index) => (
+                    <>
+                    <li class="px-12">
+                        <div class="">
+                            <h2 class="text-[1.3rem] text-gray">{item.title}</h2>
+                            <h3 class="mt-6 mb-12 text-[2.4rem] font-mincho leading-relaxed">{item.oroginTitle}</h3>
+                        </div>
+                        <Image src={item.image.src} alt={item.image.alt} width={item.image.width} height={item.image.height} class="w-full aspect-[1.618]" />
+                        <p class="mt-10 text-defaultText">{item.description}</p>
+                    </li>
+                    {index !== articleInfos.length - 1 && <hr class="border-lineGray" />}
+                    </>
+                ))}
+            </ul>
+        </article>
+    </main>
+</Layout>
