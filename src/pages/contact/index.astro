@@ -1,0 +1,106 @@
+---
+import SimpleLayout from "../../layouts/SimpleLayout.astro";
+
+const formList = [
+  {
+    label: "会社名",
+    type: "text",
+    name: "company",
+    placeholder: "会社名を入力してください",
+    required: true,
+  },
+    {
+    label: "お名前",
+    type: "text",
+    name: "name",
+    placeholder: "会社名を入力してください",
+    required: true,
+  },
+    {
+    label: "お名前（フリガナ）",
+    type: "text",
+    name: "nameKana",
+    placeholder: "会社名を入力してください",
+    required: true,
+  },
+    {
+    label: "メールアドレス",
+    type: "text",
+    name: "email",
+    placeholder: "会社名を入力してください",
+    required: true,
+  },
+    {
+    label: "電話番号",
+    type: "text",
+    name: "tel",
+    placeholder: "会社名を入力してください",
+    required: false,
+  },
+    {
+    label: "ご相談内容",
+    type: "text",
+    name: "message",
+    placeholder: "会社名を入力してください",
+    required: true,
+    textarea: true,
+  },
+]
+
+
+---
+
+<SimpleLayout title="contact">
+  <main class="w-smLayout m-auto mt-64 mb-48">
+    <div class="">
+      <h1 class="mb-10 text-[3.6rem] font-mincho">
+          お問い合わせ
+      </h1>
+      <p class="text-defaultText">
+        もしあればここにそれを説明するテキストが入ってきますからね。
+        入れるようにしておきましょうね。
+        まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。
+      </p>
+    </div>
+    <form action="" class="flex flex-col gap-12 mt-24 px-32 py-20 border border-lineGray rounded-2xl">
+      {formList.map((form) => (
+        <div class="">
+          <label for="" class="flex items-center gap-8 mb-4">
+            <span class="text-[1.6rem] font-normal leading-loose">
+              {form.label}
+            </span>
+            {form.required && (
+              <span class="px-4 py-1 text-[1.1rem] text-key border border-key bg-key bg-opacity-10 rounded-full">
+                必須
+              </span>
+            )}
+          </label>
+          {form.textarea ? (
+            <textarea
+              name={form.name}
+              id={form.name}
+              placeholder={form.placeholder}
+              required={form.required}
+              class="w-full h-48 p-6 text-[1.6rem] border border-lineGray rounded-xl"
+            ></textarea>
+          ) : (
+            <input
+              type="text"
+              name={form.name}
+              id={form.name}
+              placeholder={form.placeholder}
+              required={form.required}
+              class="w-full p-6 text-[1.6rem] border border-lineGray rounded-xl"
+            />
+          )}
+        </div>
+      ))}
+      <button
+        type="submit"
+        class="w-full py-6 text-[1.5rem] text-white font-normal bg-key rounded-xl"
+      >
+        問い合わせる
+      </button>
+    </form>
+  </main>
+</SimpleLayout>
