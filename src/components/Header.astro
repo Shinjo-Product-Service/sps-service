@@ -23,6 +23,10 @@ const menu = [
     {
         name: 'よくある質問',
         url: '/faq'
+    },
+    {
+        name: "お知らせ",
+        url: '/news'
     }
 ]
 ---
@@ -42,10 +46,10 @@ const menu = [
         <ul class="flex justify-center h-full">
             {menu.map((item) => (
                 <li class="">
-                    <a href={item.url} class="flex justify-center items-center h-full px-12 py-2 text-[1.5rem]">{item.name}</a>
+                    <a href={item.url} class="flex justify-center items-center h-full px-10 py-2 text-[1.4rem]">{item.name}</a>
                 </li>
             ))}
         </ul>
     </nav>
-    <a href="/contact" class="px-8 py-4 text-[1.4rem] text-key border border-key rounded-full">お問い合わせ</a>
+    <a href="/contact" class="px-8 py-4 text-[1.3rem] text-key border border-key rounded-full">お問い合わせ</a>
 </header>
