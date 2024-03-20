@@ -6,6 +6,10 @@ export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
+      screens: {
+        md: { max: "768px" },
+        // md: "768px",
+      },
       width: {
         defaultLayout: "128rem",
         mdLayout: "106.4rem",
