@@ -29,20 +29,40 @@ const menu = [
 ]
 ---
 
-<footer class="grid grid-cols-[auto_auto] justify-between w-defaultLayout m-auto pt-24 pb-32 border-t border-lineGray">
-    <div class="flex flex-col gap-12">
+<footer class="
+    grid grid-cols-[auto_auto] justify-between w-defaultLayout m-auto pt-24 pb-32 border-t border-lineGray
+    md:grid-cols-1 md:gap-10 md:w-full md:px-[1.6rem] md:pt-10 md:pb-20 md:border-t-0
+">
+    <div class="
+        flex flex-col gap-12
+        md:order-2 md:gap-5
+    ">
         <a href="" class="inline-block">
-            <Image src="/logo.svg" alt="Logo" width={112} height={66} class="w-[11.2rem] h-[6.6rem]" />
+            <Image 
+                src="/logo.svg" 
+                alt="Logo" 
+                width={112} 
+                height={66} 
+                class="w-[11.2rem] h-[6.6rem] md:w-[6.713rem] md:h-[4.302rem]" />
         </a>
-        <small class="text-[1.2rem] text-gray text-light">
+        <small class="
+            text-[1.2rem] text-gray text-light
+            md:text-[1.1rem]
+        ">
             ©新庄プロダクトサービス. All Rights Reserved.
         </small>
     </div>
-    <nav class="">
-        <ul class="flex">
+    <nav class="md:order-1">
+        <ul class="
+            flex
+            md:flex-col
+        ">
             {menu.map((item) => (
                 <li class="">
-                    <a href={item.url} class="px-12 py-4 text-[1.4rem]">
+                    <a href={item.url} class="
+                        inline-block px-12 py-4 text-[1.4rem]
+                        md:px-0 md:py-4
+                    ">
                         {item.name}
                     </a>
                 </li>

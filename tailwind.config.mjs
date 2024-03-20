@@ -45,6 +45,27 @@ export default {
             lineHeight: "1.4",
           },
         ],
+        spDefaultText: [
+          "1.4rem",
+          {
+            fontWeight: "DemiLight",
+            lineHeight: "2",
+          },
+        ],
+        spSectionTitle: [
+          "2.8rem",
+          {
+            fontWeight: "normal",
+            lineHeight: "1.6",
+          },
+        ],
+        spSectionTitleEn: [
+          "1.4rem",
+          {
+            fontWeight: "Regular",
+            lineHeight: "1.4",
+          },
+        ],
       },
       fontFamily: {
         sans: ["Noto Sans JP", ...defaultTheme.fontFamily.sans],
