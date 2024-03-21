@@ -59,7 +59,7 @@ export default {
             lineHeight: "1.6",
           },
         ],
-        spSectionTitleEn: [
+        spSectionEnTitle: [
           "1.4rem",
           {
             fontWeight: "Regular",

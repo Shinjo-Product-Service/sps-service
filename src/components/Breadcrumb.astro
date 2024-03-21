@@ -6,11 +6,14 @@ interface ListItem {
 }
 ---
 
-<nav class="">
+<nav class="md:px-[1.6rem]">
     <ol class="flex">
         {
             lists.map((list: ListItem, index: number) => (
-                <li class="text-[1.2rem]">
+                <li class="
+                    text-[1.2rem]
+                    md:text-[1.1rem]
+                ">
                     {lists.length - 1 !==index ? (
                         <a href={`/${list.path}`}>{list.name}</a>
                         <span class="mx-4 text-gray">・</span>
