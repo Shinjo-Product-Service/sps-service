@@ -4,6 +4,7 @@ import "@fontsource/noto-sans-jp";
 import Header from "../components/Header.astro";
 import Contact from "../components/Contact.astro";
 import Footer from "../components/Footer.astro";
+import SpMenu from "../components/SpMenu.astro";
 interface Props {
 	title: string;
 }
@@ -31,5 +32,6 @@ const { title } = Astro.props;
 			<Contact />
 			<Footer />
 		</div>
+		 <SpMenu />
 		</body>
 </html>

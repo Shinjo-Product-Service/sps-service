@@ -1,0 +1,26 @@
+[
+  {
+    "name": "ホーム",
+    "url": "/"
+  },
+  {
+    "name": "特長",
+    "url": "/feature"
+  },
+  {
+    "name": "サービス",
+    "url": "/service"
+  },
+  {
+    "name": "実績",
+    "url": "/works"
+  },
+  {
+    "name": "よくある質問",
+    "url": "/faq"
+  },
+  {
+    "name": "お知らせ",
+    "url": "/news"
+  }
+]
