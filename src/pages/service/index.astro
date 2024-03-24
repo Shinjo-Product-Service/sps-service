@@ -289,25 +289,49 @@ const flowList = [
             </div>
         </section>
         <!-- PLAN -->
-        <!-- <section class="w-mdLayout m-auto mt-56">
-            <div class="grid grid-cols-[auto_1fr] gap-40 items-end">
-                <h2 class="text-[3.2rem] font-mincho leading-relaxed">
+        <section class="
+            w-mdLayout m-auto mt-56
+            md:w-full md:px-[1.6rem] md:mt-32
+        ">
+            <div class="
+                grid grid-cols-[auto_1fr] gap-40 items-end
+                md:grid-cols-1 md:gap-4 md:mt-32
+            ">
+                <h2 class="
+                    text-[3.2rem] font-mincho leading-relaxed
+                    md:text-[2.2rem]
+                ">
                     デジタルコンテンツ<br>
                     月額定額プラン
                 </h2>
-                <p class="text-defaultText">
+                <p class="
+                    text-defaultText
+                    md:text-spDefaultText
+                ">
                     制作費無料で、かかるのは月々の更新費用のみです。<br>
                     自社の課題にぴったりなプランをご提供させていただきます。
                 </p>
             </div>
-            <ul class="grid grid-cols-3 gap-8 mt-20">
+            <ul class="
+                grid grid-cols-3 gap-8 mt-20
+                md:grid-cols-1 md:mt-10
+            ">
                 {planList.map((plan) =>
-                    <li class="grid grid-rows-[auto_1fr_auto] items-center justify-between gap-10 p-12 border border-lineGray rounded-2xl">
+                    <li class="
+                        grid grid-rows-[auto_1fr_auto] items-center justify-between gap-10 p-12 border border-lineGray rounded-2xl
+                        md:grid-cols-1 md:gap-8
+                    ">
                         <div class="h-full">
-                            <h3 class="mb-8 text-[2.2rem] font-medium text-center">
+                            <h3 class="
+                                mb-8 text-[2.2rem] font-medium text-center
+                                md:text-[2rem]
+                            ">
                                 {plan.name}
                             </h3>
-                            <p class="mb-6 text-[1.4rem] text-center">
+                            <p class="
+                                mb-6 text-[1.4rem] text-center
+                                md:mb-5 md:text-[1.3rem]
+                            ">
                                 {plan.description}
                             </p>
                             <p class="flex justify-center items-end gap-4">
@@ -333,78 +357,106 @@ const flowList = [
                         </div>
                         <a 
                             href="/contact" 
-                            class="flex justify-center w-full p-4 text-[1.3rem] text-white font-normal bg-key rounded-full">
+                            class="flex justify-center w-full p-5 text-[1.3rem] text-white font-normal bg-key rounded-full">
                             申し込む
                         </a>
                     </li>
                 )}
             </ul>
-        </section> -->
+        </section>
         <!-- FAQ -->
-        <!-- <section class="grid grid-cols-[auto_1fr] gap-24 justify-between w-defaultLayout m-auto mt-56 pl-[10.8rem]">
-            <div class="w-[36rem] py-2">
-                <h2 class="mb-10 text-sectionTitle font-mincho">
+        <section class="
+            grid grid-cols-[auto_1fr] gap-24 justify-between w-defaultLayout m-auto mt-56 pl-[10.8rem]
+            md:grid-cols-1 md:gap-12 md:mt-32 md:w-full md:px-[1.6rem]
+        ">
+            <div class="
+                w-[36rem] py-2
+                md:w-full md:p-0
+            ">
+                <h2 class="
+                    mb-10 text-sectionTitle font-mincho
+                    md:mb-4 md:text-[2.2rem]
+                ">
                     よくあるご質問
                 </h2>
-                <p class="text-defaultText">
+                <p class="
+                    text-defaultText
+                    md:text-spDefaultText
+                ">
                     皆様からよくいただくご質問をまとめています。
                 </p>
             </div>
             <div class="">
-                <ul class="flex flex-col gap-16">
+                <ul class="
+                    flex flex-col gap-16
+                    md:gap-10
+                ">
                     {faqList.map((faq, index) => 
                         <FaqItem
                             index={index}
                             question={faq.question}
                             answer={faq.answer}
                         />
-                        // <li class="grid grid-cols-[auto_1fr] gap-10 pb-16 px-5 border-b border-lineGray">
-                        //     <span class="text-[2rem] text-key font-urbanist font-extralight leading-[185%] tracking-wider">
-                        //         Q{index + 1}.
-                        //     </span>
-                        //     <div class="">
-                        //         <h3 class="mb-3 text-[1.8rem] font-normal leading-loose">
-                        //             {faq.question}
-                        //         </h3>
-                        //         <p class="text-defaultText">
-                        //             {faq.answer}
-                        //         </p>
-                        //     </div>
-                        // </li>
                     )}
                 </ul>
             </div>
-        </section> -->
+        </section>
         <!-- FLOW -->
-        <!-- <section class="w-mdLayout m-auto mt-56 mb-64">
-            <div class="w-[40rem]">
-                <h2 class="mb-8 text-sectionTitle font-mincho">
+        <section class="
+            w-mdLayout m-auto mt-56 mb-64
+            md:w-full md:px-[1.6rem] md:mt-32 md:mb-40
+        ">
+            <div class="
+                w-[40rem]
+                md:w-full
+            ">
+                <h2 class="
+                    mb-8 text-sectionTitle font-mincho
+                    md:mb-4 md:text-[2.2rem]
+                ">
                     ご利用までの流れ
                 </h2>
-                <p class="text-defaultText">
+                <p class="
+                    text-defaultText
+                    md:text-spDefaultText
+                ">
                     寄り添いながら制作から納品まで丁寧にご対応をさせていただきます。
                 </p>
             </div>
-            <div class="flex gap-12 mt-16">
-                {flowList.map((flow, index) => 
-                <>
-                    <div class="flex justify-center items-center w-full aspect-square border border-lineGray rounded-full">
-                        <span class="text-[1.5rem] text-center leading-loose whitespace-break-spaces">
-                            {flow}
-                        </span>
-                    </div>
-                    {index !== flowList.length - 1 && (
-                        <Image
-                            src="/assets/icon/arrow.svg"
-                            alt="矢印"
-                            width={10}
-                            height={16.19}
-                            class="w-24"
-                        />
+            <div class="
+                mt-16
+                md:mt-10 md:overflow-x-scroll
+            ">
+                <div class="
+                    flex gap-12
+                    md:gap-8 md:w-fit
+                ">
+                    {flowList.map((flow, index) => 
+                    <>
+                        <div class="
+                            flex justify-center items-center w-full aspect-square border border-lineGray rounded-full
+                            md:w-96
+                        ">
+                            <span class="
+                                text-[1.5rem] text-center leading-loose whitespace-break-spaces
+                                md:text-[1.3rem]
+                            ">
+                                {flow}
+                            </span>
+                        </div>
+                        {index !== flowList.length - 1 && (
+                            <Image
+                                src="/assets/icon/arrow.svg"
+                                alt="矢印"
+                                width={10}
+                                height={16.19}
+                                class="w-24 md:w-10"
+                            />
+                        )}
+                    </>
                     )}
-                </>
-                )}
+                </div>
             </div>
-        </section> -->
+        </section>
     </main>
 </Layout>

@@ -2,15 +2,27 @@
 const {index, question, answer} = Astro.props;
 ---
 
-<li class="grid grid-cols-[auto_1fr] gap-10 pb-16 px-5 border-b border-lineGray">
-    <span class="text-[2rem] text-key font-urbanist leading-[185%]">
+<li class="
+    grid grid-cols-[auto_1fr] gap-10 pb-16 px-5 border-b border-lineGray
+    md:gap-6 md:px-0 md:pb-10
+">
+    <span class="
+        text-[2rem] text-key font-urbanist leading-[185%]
+        md:text-[1.8rem] md:leading-[180%]
+    ">
         Q{index + 1}.
     </span>
     <div class="">
-        <h3 class="mb-3 text-[1.8rem] font-normal leading-loose">
+        <h3 class="
+            mb-3 text-[1.8rem] font-normal leading-loose
+            md:text-[1.5rem]
+        ">
             {question}
         </h3>
-        <p class="text-defaultText">
+        <p class="
+            text-defaultText
+            md:text-spDefaultText
+        ">
             {answer}
         </p>
     </div>
