@@ -93,7 +93,10 @@ const flowList = [
 <Layout title="service">
     <main>
         <!-- FV -->
-        <div class="flex flex-col gap-28 w-defaultLayout m-auto mt-64">
+        <div class="
+            flex flex-col gap-28 w-defaultLayout m-auto mt-64
+            md:w-full md:gap-16 md:mt-40
+        ">
             <Breadcrumb
                 lists={[
                     { name: "ホーム", path: "/" },
@@ -107,13 +110,25 @@ const flowList = [
             />
         </div>
         <!-- INTRO -->
-        <section class="mt-48">
-            <div class="w-mdLayout m-auto">
-                <h2 class="mb-8 text-[3.2rem] font-mincho leading-relaxed">
+        <section class="
+            mt-48
+            md:mt-16
+        ">
+            <div class="
+                w-mdLayout m-auto
+                md:w-full md:px-[1.6rem]
+            ">
+                <h2 class="
+                    mb-8 text-[3.2rem] font-mincho leading-relaxed
+                    md:mb-6 md:text-[2rem]
+                ">
                     デジタル課題を解決する<br>
                     多面的なコンテンツと手法を提供します。
                 </h2>
-                <p class="text-[1.5rem] leading-loose">
+                <p class="
+                    text-[1.5rem] leading-loose
+                    md:text-spDefaultText
+                ">
                     もしあればここにそれを説明するテキストが入ってきますからね。<br>
                     入れるようにしておきましょうね。<br>
                     まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。
@@ -124,16 +139,25 @@ const flowList = [
                 alt="サービスの紹介画像"
                 width={1440}
                 height={480}
-                class="w-full h-[48rem] mt-24"
+                class="w-full h-[48rem] mt-24 aspect-auto object-cover md:h-[24rem] md:mt-12"
             />
         </section>
         <!-- SERVICE -->
-        <section class="w-defaultLayout m-auto mt-56">
-            <h2 class="mb-12 text-[2.8rem] font-mincho">
+        <section class="
+            w-defaultLayout m-auto mt-56
+            md:w-full md:px-[1.6rem] md:mt-32
+        ">
+            <h2 class="
+                mb-12 text-[2.8rem] font-mincho
+                md:mb-8 md:text-[2.2rem]
+            ">
                 デジタル化の支援
             </h2>
             <div class="">
-                <ul class="grid grid-cols-4 gap-8">
+                <ul class="
+                    grid grid-cols-4 gap-8
+                    md:grid-cols-1 md:gap-10
+                ">
                     {serviceList.map((service) =>
                     <li class="">
                         <Image
@@ -143,8 +167,14 @@ const flowList = [
                             height={200}
                             class="w-full h-[20rem] object-cover"
                         />
-                        <div class="mt-8">
-                            <h3 class="mb-2 text-[1.7rem] font-mincho">
+                        <div class="
+                            mt-8
+                            md:mt-6
+                        ">
+                            <h3 class="
+                                mb-2 text-[1.7rem] font-mincho
+                                md:mb-3
+                            ">
                                 {service.title}
                             </h3>
                             <p class="text-[1.3rem] leading-relaxed">
@@ -157,23 +187,44 @@ const flowList = [
             </div>
         </section>
         <!-- PRICE -->
-        <section class="grid grid-cols-[1fr_auto] gap-32 items-end w-defaultLayout m-auto mt-56">
+        <section class="
+            grid grid-cols-[1fr_auto] gap-32 items-end w-defaultLayout m-auto mt-56
+            md:grid-cols-1 md:gap-10 md:mt-32 md:w-full md:px-[1.6rem]
+        ">
             <div class="">
-                <h2 class="mb-8 text-[3.2rem] font-mincho">
+                <h2 class="
+                    mb-8 text-[3.2rem] font-mincho
+                    md:text-[2rem] md:mb-4
+                ">
                     基本料金
                 </h2>
-                <p class="text-defaultText">
+                <p class="
+                    text-defaultText
+                    md:text-spDefaultText
+                ">
                     もしあればここにそれを説明するテキストが入ってきますからね。
                     入れるようにしておきましょうね。
                     まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。
                 </p>
             </div>
-            <div class="flex gap-8 items-center">
-                <div class="flex flex-col items-center justify-between min-w-[22rem] min-h-48 p-10 border border-lineGray rounded-xl">
-                    <h3 class="mb-4 text-[1.4rem]">
+            <div class="
+                flex gap-8 items-center
+                md:gap-4
+            ">
+                <div class="
+                    flex flex-col items-center justify-between min-w-[22rem] min-h-48 p-10 border border-lineGray rounded-xl
+                    md:w-full md:min-w-36 md:min-h-32 md:p-6 md:text-center
+                ">
+                    <h3 class="
+                        mb-4 text-[1.4rem]
+                        md:mb-2 md:text-[1.2rem]
+                    ">
                         月額費用
                     </h3>
-                    <p class="text-[1.8rem] font-medium">
+                    <p class="
+                        text-[1.8rem] font-medium
+                        md:text-[1.4rem]
+                    ">
                         プランごとの料金
                     </p>
                 </div>
@@ -184,12 +235,21 @@ const flowList = [
                     height={16}
                     class="w-6 h-6"
                 />
-                <div class="flex flex-col items-center min-w-[22rem] min-h-48 p-10 text-key border border-key rounded-xl">
-                    <h3 class="mb-4 text-[1.4rem] ">
+                <div class="
+                    flex flex-col items-center min-w-[22rem] min-h-48 p-10 text-key border border-key rounded-xl
+                    md:w-full md:min-w-36 md:h-full md:min-h-32 md:p-6 md:text-center
+                ">
+                    <h3 class="
+                        mb-4 text-[1.4rem]
+                        md:mb-2 md:text-[1.2rem]
+                    ">
                         初期費用
                     </h3>
                     <p class="flex items-end gap-2">
-                        <span class="text-[2.8rem] font-urbanist font-light leading-tight">
+                        <span class="
+                            text-[2.8rem] font-urbanist font-light leading-tight
+                            md:text-[2.2rem]
+                        ">
                             0
                         </span>
                         <span class="text-[1.2rem] font-normal leading-loose">
@@ -204,12 +264,21 @@ const flowList = [
                     height={16}
                     class="w-6 h-6"
                 />
-               <div class="flex flex-col items-center min-w-[22rem] min-h-48 p-10 text-key border border-key rounded-xl">
-                    <h3 class="mb-4 text-[1.4rem] ">
+                 <div class="
+                    flex flex-col items-center min-w-[22rem] min-h-48 p-10 text-key border border-key rounded-xl
+                    md:w-full md:min-w-36 md:h-full md:min-h-32 md:p-6 md:text-center
+                ">
+                    <h3 class="
+                        mb-4 text-[1.4rem]
+                        md:mb-2 md:text-[1.2rem]
+                    ">
                         解約費用
                     </h3>
                     <p class="flex items-end gap-2">
-                        <span class="text-[2.8rem] font-urbanist font-light leading-tight">
+                        <span class="
+                            text-[2.8rem] font-urbanist font-light leading-tight
+                            md:text-[2.2rem]
+                        ">
                             0
                         </span>
                         <span class="text-[1.2rem] font-normal leading-loose">
@@ -220,7 +289,7 @@ const flowList = [
             </div>
         </section>
         <!-- PLAN -->
-        <section class="w-mdLayout m-auto mt-56">
+        <!-- <section class="w-mdLayout m-auto mt-56">
             <div class="grid grid-cols-[auto_1fr] gap-40 items-end">
                 <h2 class="text-[3.2rem] font-mincho leading-relaxed">
                     デジタルコンテンツ<br>
@@ -270,9 +339,9 @@ const flowList = [
                     </li>
                 )}
             </ul>
-        </section>
+        </section> -->
         <!-- FAQ -->
-        <section class="grid grid-cols-[auto_1fr] gap-24 justify-between w-defaultLayout m-auto mt-56 pl-[10.8rem]">
+        <!-- <section class="grid grid-cols-[auto_1fr] gap-24 justify-between w-defaultLayout m-auto mt-56 pl-[10.8rem]">
             <div class="w-[36rem] py-2">
                 <h2 class="mb-10 text-sectionTitle font-mincho">
                     よくあるご質問
@@ -305,9 +374,9 @@ const flowList = [
                     )}
                 </ul>
             </div>
-        </section>
+        </section> -->
         <!-- FLOW -->
-        <section class="w-mdLayout m-auto mt-56 mb-64">
+        <!-- <section class="w-mdLayout m-auto mt-56 mb-64">
             <div class="w-[40rem]">
                 <h2 class="mb-8 text-sectionTitle font-mincho">
                     ご利用までの流れ
@@ -336,6 +405,6 @@ const flowList = [
                 </>
                 )}
             </div>
-        </section>
+        </section> -->
     </main>
 </Layout>

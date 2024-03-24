@@ -48,8 +48,8 @@ import menu from "../data/menu.json";
     const target = document.querySelector('.target');
     const triggerLines = document.querySelectorAll('.triggerLine');
 
-    trigger.addEventListener('click', () => {
-        if(target.classList.contains('hidden')) {
+    trigger?.addEventListener('click', () => {
+        if(target?.classList.contains('hidden')) {
             console.log(111)
             target.classList.remove('hidden');
             trigger.classList.add('bg-white');
@@ -64,7 +64,7 @@ import menu from "../data/menu.json";
 
         } else {
             console.log(222)
-            target.classList.add('hidden');
+            target?.classList.add('hidden');
             trigger.classList.remove('bg-white');
             triggerLines.forEach(line => {
                 line.classList.add('bg-white');
