@@ -8,7 +8,10 @@ import NewsItem from '../../components/news/NewsItem.astro';
 <Layout title="news">
     <main>
         <!-- FV -->
-        <div class="flex flex-col gap-28 w-defaultLayout m-auto mt-64">
+        <div class="
+            flex flex-col gap-28 w-defaultLayout m-auto mt-64
+            md:w-full md:gap-16 md:mt-40
+        ">
             <Breadcrumb
                 lists={[
                     { name: "ホーム", path: "/" },
@@ -22,7 +25,10 @@ import NewsItem from '../../components/news/NewsItem.astro';
             />
         </div>
         <!-- MAIN -->
-        <div class="w-mdLayout m-auto mt-24 mb-64">
+        <div class="
+            w-mdLayout m-auto mt-24 mb-64
+            md:w-full md:mt-0 md:mb-40 md:px-[1.6rem]
+        ">
             <ul class="">
                 <li class="">
                     <NewsItem />
