@@ -6,19 +6,19 @@ interface ListItem {
 }
 ---
 
-<nav class="md:px-[1.6rem]">
+<nav class="md:px-[1.6rem] overflow-scroll">
     <ol class="flex">
         {
             lists.map((list: ListItem, index: number) => (
                 <li class="
-                    text-[1.2rem]
-                    md:text-[1.1rem]
+                    text-[1.2rem] whitespace-nowrap
+                    md:text-[1.1rem] 
                 ">
                     {lists.length - 1 !==index ? (
-                        <a href={`/${list.path}`}>{list.name}</a>
+                        <a href={`/${list.path}`} class="whitespace-nowrap">{list.name}</a>
                         <span class="mx-4 text-gray">・</span>
                     ) : (
-                        <span class="text-gray">{list.name}</span>
+                        <span class="text-gray whitespace-nowrap">{list.name}</span>
                     )}
                 </li>
             ))
