@@ -8,14 +8,20 @@ const featureList = [
 	{
 		image: '/assets/images/home/feature_1.jpg',
 		title: '低コストで導入が可能',
+		alt: "山",
+		label: "label1"
 },
 	{
 		image: '/assets/images/home/feature_2.jpg',
 		title: '地方企業のデジタル課題をフルサポート',
+		alt: "川",
+		label: "label2"
 },
 	{
 		image: '/assets/images/home/feature_3.jpg',
 		title: '経験豊富なスタッフが対応で安心',
+		alt: "海",
+		label: "label3"
 }
 ];
 
@@ -64,7 +70,7 @@ const workInformations = [
 		<!-- FV -->
 		<!-- <div class="flex items-center w-screen h-screen py-[10vw]"> -->
 		<div class="
-			flex w-screen h-screen py-[12rem]
+			flex py-[12rem]
 			md:h-fit md:pt-[9rem] md:pb-0
 		">
 			<!-- <h1 class="ml-32 text-[12.5vw] font-mincho leading-[125%] tracking-[1.8%]"> -->
@@ -116,10 +122,11 @@ const workInformations = [
 						<li class="">
 							<Image 
 								src={feature.image} 
-								alt={feature.title} 
+								alt={feature.alt} 
 								width={10} 
 								height={10} 
-								class="w-full mb-4 md:w-[30rem] aspect-[1.618]" 
+								class="w-full mb-4 md:w-[30rem]" 
+								// aria-label={feature.title}
 							/>
 							<p class="
 								mt-6 text-[1.6rem] font-mincho

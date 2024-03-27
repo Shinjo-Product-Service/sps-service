@@ -3,12 +3,18 @@ import Image from "astro/components/Image.astro";
 import menu from "../data/menu.json";
 ---
 
-<button class="trigger fixed bottom-8 left-[1.6rem] flex flex-col justify-center items-center w-16 h-14 bg-key rounded-md z-50">
+<button 
+    class="
+        hidden trigger fixed bottom-8 left-[1.6rem] flex-col justify-center items-center w-16 h-14 bg-keyWeak rounded-md z-50
+        md:flex
+    "
+    aria-label="メニューを開く"
+>
     <span class="absolute triggerLine w-[calc(100%-1.8rem)] h-px bg-white translate-y-[.3rem]"></span>
     <span class="absolute triggerLine w-[calc(100%-1.8rem)] h-px bg-white -translate-y-[.3rem]"></span>
 </button>
 
-<nav class="target fixed top-0 left-0 hidden w-full h-full px-[1.6rem] bg-key z-40">
+<nav class="target fixed top-0 left-0 hidden w-full h-full px-[1.6rem] bg-keyWeak z-40">
     <div class="
         absolute top-0 left-0 grid grid-cols-[auto_1fr_auto] items-center w-full py-10
         md:flex justify-between md:px-[1.6rem] md:py-[1.2rem]">

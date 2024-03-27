@@ -18,6 +18,7 @@ export default {
       colors: {
         default: "#242424",
         key: "#5A93A4",
+        keyWeak: "#57768c",
         gray: "#AEAEAE",
         white: "#FCFCFC",
         lineGray: "#D3D3D3",
