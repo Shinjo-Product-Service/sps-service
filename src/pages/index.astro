@@ -8,14 +8,20 @@ const featureList = [
 	{
 		image: '/assets/images/home/feature_1.jpg',
 		title: '低コストで導入が可能',
+		alt: "山",
+		label: "label1"
 },
 	{
 		image: '/assets/images/home/feature_2.jpg',
 		title: '地方企業のデジタル課題をフルサポート',
+		alt: "川",
+		label: "label2"
 },
 	{
 		image: '/assets/images/home/feature_3.jpg',
 		title: '経験豊富なスタッフが対応で安心',
+		alt: "海",
+		label: "label3"
 }
 ];
 
@@ -63,108 +69,212 @@ const workInformations = [
 	<main>
 		<!-- FV -->
 		<!-- <div class="flex items-center w-screen h-screen py-[10vw]"> -->
-		<div class="flex w-screen h-screen py-[12rem]">
+		<div class="
+			flex py-[12rem]
+			md:h-fit md:pt-[9rem] md:pb-0
+		">
 			<!-- <h1 class="ml-32 text-[12.5vw] font-mincho leading-[125%] tracking-[1.8%]"> -->
-			<h1 class=" ml-32 text-[16rem] font-mincho leading-[125%] tracking-[1.8%]">
+			<h1 class="
+				ml-32 text-[16rem] font-mincho leading-[125%] tracking-[1.8%]
+				md:ml-[1.6rem] md:text-[5.2rem] md:leading-relaxed md:tracking-normal
+			">
 				デジタル時代の<br/>
 				門出を、<br/>
 				私たちと一緒に。
 			</h1>
 		</div>
 		<!-- FEATURE -->
-		<section class="w-defaultLayout m-auto mt-56">
-			<div class="mb-24 grid grid-cols-[1fr_auto] gap-12 items-end">
+		<section class="
+			w-defaultLayout m-auto mt-56
+			md:mt-24 md:w-full md:px-[1.6rem]
+		">
+			<div class="
+				grid grid-cols-[1fr_auto] gap-12 items-end mb-24
+				md:flex md:flex-col md:gap-10 md:mb-16 md:justify-end
+			">
 				<div class="">
-					<h2 class="mb-8 text-sectionEnTitle text-key font-urbanist">
+					<h2 class="
+						mb-8 text-sectionEnTitle text-key font-urbanist
+						md:mb-5 md:text-spSectionEnTitle
+					">
 						Feature
 					</h2>
-					<h3 class="mb-16 text-[4.8rem] font-mincho leading-normal">
+					<h3 class="
+						mb-16 text-[4.8rem] font-mincho leading-normal
+						md:mb-6 md:text-spSectionTitle
+					">
 						私たちには選ばれる理由が<br>
 						3つあります
 					</h3>
-					<p class="w-[40rem] text-defaultText">
+					<p class="
+						w-[40rem] text-defaultText
+						md:w-full md:text-spDefaultText
+					">
 						もしあればここにそれを説明するテキストが入ってきますからね。入れるようにしておきましょうね。
 						まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。
 					</p>
 				</div>
 				<Link href="/feature" text="特長をくわしく見る" />
 			</div>
-			<div class="">
-				<ul class="grid grid-cols-3 gap-8">
+			<div class="md:w-full md:overflow-scroll">
+				<ul class="grid grid-cols-3 gap-8 md:w-max">
 					{featureList.map((feature) => (
 						<li class="">
-							<Image src={feature.image} alt={feature.title} width={10} height={10} class="w-full mb-4" />
-							<p class="mt-6 text-[1.6rem] font-mincho">{feature.title}</p>
+							<Image 
+								src={feature.image} 
+								alt={feature.alt} 
+								width={10} 
+								height={10} 
+								class="w-full mb-4 md:w-[30rem]" 
+								// aria-label={feature.title}
+							/>
+							<p class="
+								mt-6 text-[1.6rem] font-mincho
+								md:text-[1.5rem]
+							">
+								{feature.title}
+							</p>
 						</li>
 					))}
 				</ul>
 			</div>
 		</section>
 		<!-- SERVICE -->
-		<section class="w-defaultLayout m-auto mt-56">
-			<h2 class="mb-8 text-sectionEnTitle text-key font-urbanist">
+		<section class="
+			w-defaultLayout m-auto mt-56
+			md:mt-24 md:w-full md:px-[1.6rem]
+		">
+			<h2 class="
+				mb-8 text-sectionEnTitle text-key font-urbanist
+				md:mb-5 md:text-spSectionEnTitle
+			">
 				Service
 			</h2>
-			<div class="grid grid-cols-[1fr_auto]">
-				<h3 class="text-[4.4rem] font-mincho leading-relaxed">
+			<div class="
+				grid grid-cols-[1fr_auto]
+				md:grid-cols-1
+			">
+				<h3 class="
+					text-[4.4rem] font-mincho leading-relaxed
+					md:mb-6 md:text-spSectionTitle
+				">
 					お困りのデジタル課題を<br>
 					解決します
 				</h3>
-				<p class="w-[40rem] text-defaultText">
+				<p class="
+					w-[40rem] text-defaultText
+					md:w-full md:text-spDefaultText
+				">
 					もしあればここにそれを説明するテキストが入ってきますからね。入れるようにしておきましょうね。
 					まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。
 				</p>
 			</div>
-			<div class="mt-32">
-				<ul class="grid grid-cols-4 gap-8">
+			<div class="
+				mt-32
+				md:mt-4
+			">
+				<ul class="
+					grid grid-cols-4 gap-8
+					md:grid-cols-1 md:gap-0
+				">
 					{serviceList.map((service) => (
-						<li class="p-12 border border-lineGray rounded-xl">
-							<h4 class="mb-5 text-[1.7rem] font-mincho">{service.title}</h4>
-							<p class="text-[1.3rem] leading-relaxed">{service.description}</p>
+						<li class="
+							p-12 border border-lineGray rounded-xl
+							md:px-5 md:py-10 md:border-r-0 md:border-l-0 md:border-t-0 md:rounded-none
+						">
+							<h4 class="
+								mb-5 text-[1.7rem] font-mincho
+								md:mb-4 md:text-[1.4rem] 
+							">{service.title}</h4>
+							<p class="
+								text-[1.3rem] leading-relaxed
+								md:text-[1.2rem]
+							">{service.description}</p>
 						</li>
 					))
 					}
 				</ul>
 			</div>
-			<div class="flex justify-end mt-24">
+			<div class="
+				flex justify-end mt-24
+				md:mt-10
+			">
 				<Link href="/service" text="サービスをくわしく見る" />
 			</div>
 		</section>
 		<!-- WORKS -->
-		<section class="grid grid-cols-2 gap-32 mt-56 w-defaultLayout m-auto">
-			<div class="grid grid-cols-[auto_1fr] gap-[1.8rem]">
-				<h2 class="w-36 mb-8 py-4 text-sectionEnTitle text-key font-urbanist">
+		<section class="
+			grid grid-cols-2 gap-32 mt-56 w-defaultLayout m-auto
+			md:grid-cols-1 md:gap-12 md:mt-24 md:w-full md:px-[1.6rem]
+		">
+			<div class="
+				grid grid-cols-[auto_1fr] gap-[1.8rem]
+				md:grid-cols-1 md:gap-0
+			">
+				<h2 class="
+					w-36 mb-8 py-4 text-sectionEnTitle text-key font-urbanist
+					md:w-full md:mb-5 md:p-0 md:text-spSectionEnTitle
+				">
 					Works
 				</h2>
-				<div class="grid grid-rows-[auto_1fr_auto]">
-					<h3 class="mb-16 text-[4.8rem] font-mincho leading-normal">
+				<div class="
+					grid grid-rows-[auto_1fr_auto]
+					md:grid-cols-1
+				">
+					<h3 class="
+						mb-16 text-[4.8rem] font-mincho leading-normal
+						md:mb-6 md:text-spSectionTitle
+					">
 						これまでの<br>
 						お客様成功事例
 					</h3>
-					<p class="text-defaultText mb-28">
+					<p class="
+						text-defaultText mb-28
+						md:text-spDefaultText md:mb-10
+					">
 						もしあればここにそれを説明するテキストが入ってきますからね。入れるようにしておきましょうね。
 						まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。
 					</p>
 					<Link href="/works" text="事例をくわしく見る" />
 				</div>
 			</div>
-			<div class="">
+			<div class="md:w-full">
 				<Image src="/assets/images/home/work.jpg" alt="制作実績" width={600} height={340} class="w-full" />
 				<div class="mt-8">
-					<h4 class="mb-8 pb-6 text-[2rem] font-mincho border-b border-lineGray">
+					<h4 class="
+						mb-8 pb-6 text-[2rem] font-mincho border-b border-lineGray
+						md:text-[1.6rem] md:mb-5 md:pb-5
+					">
 						ブランディングした商品をEC機能を導入して販売
 					</h4>
-					<div class="flex gap-3 w-fit px-5 py-3 border border-lineGray rounded-full">
-						<Image src="/assets/images/home/work_icon.png" alt="制作実績" width={26} height={17.33} class="" />
-						<span class="text-[1.3rem]">
+					<div class="
+						flex gap-3 w-fit px-5 py-3 border border-lineGray rounded-full
+						md:gap-2
+					">
+						<Image 
+							src="/assets/images/home/work_icon.png" 
+							alt="制作実績" 
+							width={26} 
+							height={17.33} 
+							class="aspect-[1.618] md:w-2.2rem" />
+						<span class="
+							text-[1.3rem]
+							md:text-[1.2rem]
+						">
 							泉菜株式会社
 						</span>
 					</div>
 					<div class="flex flex-col gap-2 mt-5">
 						{workInformations.map((workInformation) => (
 							<dl class="grid grid-cols-[6rem_1fr] gap-8">
-								<dt class="text-[1.3rem] text-gray">{workInformation.title}</dt>
-								<dd class="text-[1.3rem]">{workInformation.description}</dd>
+								<dt class="
+									text-[1.3rem] text-gray
+									md:text-[1.2rem]
+								">{workInformation.title}</dt>
+								<dd class="
+									text-[1.3rem]
+									md:text-[1.2rem]
+								">{workInformation.description}</dd>
 							</dl>
 						))}
 					</div>
@@ -172,13 +282,28 @@ const workInformations = [
 			</div>
 		</section>
 		<!-- NEWS -->
-		<section class="flex flex-col gap-16 items-end w-defaultLayout m-auto mt-56 mb-64 pl-[10.8rem]">
-			<div class="grid grid-cols-[auto_1fr] gap-48 w-full">
-				<div class="flex flex-col py-8">
-					<h2 class="text-sectionEnTitle text-key font-urbanist order-2">
+		<section class="
+			flex flex-col gap-16 items-end w-defaultLayout m-auto mt-56 mb-64 pl-[10.8rem]
+			md:gap-10 md:w-full md:mt-24 md:mb-40 md:px-[1.6rem]
+		">
+			<div class="
+				grid grid-cols-[auto_1fr] gap-48 w-full
+				md:grid-cols-1 md:gap-6
+			">
+				<div class="
+					flex flex-col py-8
+					md:py-0
+				">
+					<h2 class="
+						text-sectionEnTitle text-key font-urbanist order-2
+						md:mb-5 md:text-spSectionEnTitle md:order-1
+					">
 						News
 					</h2>
-					<h3 class="mb-8 text-[4rem] font-mincho order-1">
+					<h3 class="
+						mb-8 text-[4rem] font-mincho order-1
+						md:mb-0 md:text-spSectionTitle md:order-2
+					">
 						最新のお知らせ
 					</h3>
 				</div>

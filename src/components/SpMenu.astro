@@ -1,0 +1,85 @@
+---
+import Image from "astro/components/Image.astro";
+import menu from "../data/menu.json";
+---
+
+<button 
+    class="
+        hidden trigger fixed bottom-8 left-[1.6rem] flex-col justify-center items-center w-16 h-14 bg-keyWeak rounded-md z-50
+        md:flex
+    "
+    aria-label="メニューを開く"
+>
+    <span class="absolute triggerLine w-[calc(100%-1.8rem)] h-px bg-white translate-y-[.3rem]"></span>
+    <span class="absolute triggerLine w-[calc(100%-1.8rem)] h-px bg-white -translate-y-[.3rem]"></span>
+</button>
+
+<nav class="target fixed top-0 left-0 hidden w-full h-full px-[1.6rem] bg-keyWeak z-40">
+    <div class="
+        absolute top-0 left-0 grid grid-cols-[auto_1fr_auto] items-center w-full py-10
+        md:flex justify-between md:px-[1.6rem] md:py-[1.2rem]">
+        <a href="/" class="">
+            <Image
+                src="/logo.svg"
+                alt="Logo"
+                width="112"
+                height="66"
+                loading={"eager"}
+                class="w-[11.2rem] h-[6.6rem] md:w-[6.713rem] md:h-[4.302rem]"
+            />
+        </a>    
+    </div>
+    <ul class="mt-48">
+        {menu.map((item, index) => (
+            <li class="first:border-t first:border-lineGray">
+                <a 
+                    href={item.url} 
+                    class="
+                        block w-full py-10 text-[1.5rem] text-white border-b border-lineGray
+                    ">
+                    {item.name}
+                </a>
+            </li>
+        ))}
+    </ul>
+    <a 
+        href="" 
+        class="flex justify-center items-center w-full mt-24 p-5 text-[1.5rem] text-key font-normal bg-white rounded-full">
+        お問い合わせ
+    </a>
+</nav>
+
+<script>
+    const trigger = document.querySelector('.trigger');
+    const target = document.querySelector('.target');
+    const triggerLines = document.querySelectorAll('.triggerLine');
+
+    trigger?.addEventListener('click', () => {
+        if(target?.classList.contains('hidden')) {
+            console.log(111)
+            target.classList.remove('hidden');
+            trigger.classList.add('bg-white');
+            triggerLines.forEach(line => {
+                line.classList.add('bg-key');
+                line.classList.remove('bg-white');
+            })
+            triggerLines[0].classList.add('rotate-45');
+            triggerLines[1].classList.add('-rotate-45')
+            triggerLines[0].classList.remove('translate-y-[.3rem]');
+            triggerLines[1].classList.remove('-translate-y-[.3rem]');
+
+        } else {
+            console.log(222)
+            target?.classList.add('hidden');
+            trigger.classList.remove('bg-white');
+            triggerLines.forEach(line => {
+                line.classList.add('bg-white');
+                line.classList.remove('bg-key');
+            })
+            triggerLines[0].classList.remove('rotate-45');
+            triggerLines[1].classList.remove('-rotate-45');
+            triggerLines[0].classList.add('translate-y-[.3rem]');
+            triggerLines[1].classList.add('-translate-y-[.3rem]');
+        }
+    });
+</script>

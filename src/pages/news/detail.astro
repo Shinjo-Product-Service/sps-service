@@ -6,7 +6,10 @@ import Image from 'astro/components/Image.astro';
 
 <Layout title="works">
     <main>
-        <div class="flex flex-col gap-28 w-defaultLayout m-auto mt-64">
+        <div class="
+            flex flex-col gap-28 w-defaultLayout m-auto mt-64
+            md:gap-16 md:w-full md:mt-40
+        ">
             <Breadcrumb
                 lists={[
                     { name: "ホーム", path: "/" },
@@ -14,42 +17,67 @@ import Image from 'astro/components/Image.astro';
                     { name: "最新のニュースですよ" }
                 ]}
             />
-            <div class="w-smLayout m-auto mb-64">
+            <div class="
+                w-smLayout m-auto mb-64
+                md:w-full md:mb-40 md:px-[1.6rem]
+            ">
                 <div class="">
-                    <div class="flex gap-10 mb-8">
-                        <time datetime="2024-01-01" class="text-[1.6rem] font-urbanist">
+                    <div class="flex gap-10 mb-8 items-center">
+                        <time 
+                            datetime="2024-01-01" 
+                            class="
+                                text-[1.6rem] text-gray font-urbanist
+                                md:text-[1.4rem]
+                            "
+                        >
                             2024.01.01
                         </time>
-                        <span class="inline-flex justify-center px-4 py-2 text-[1.2rem] leading-tight text-key border border-key rounded-md bg-key bg-opacity-10">
+                        <span class="
+                            inline-flex justify-center px-4 py-2 text-[1.2rem] leading-tight text-key border border-key rounded-md bg-key bg-opacity-10
+                            md:text-[1.1rem]
+                        ">
                             ニュース
                         </span>
                     </div>
-                    <h1 class="mb-16 text-[3.2rem] font-mincho">
+                    <h1 class="
+                        mb-16 text-[3.2rem] font-mincho leading-relaxed
+                        md:text-[2.4rem]
+                    ">
                         最新のニュースですよ
                     </h1>
                 </div>
-                <article class="mt-24">
-                    <h2 class="mb-12 text-[2.2rem] font-normal">
+                <article class="
+                    mt-24
+                    md:mt-10
+                ">
+                    <h2 class="
+                        mb-12 text-[2.2rem] font-normal
+                        md:mb-8 md:text-[1.8rem]
+                    ">
                         こんなニュースさ
                     </h2>
-                    <p class="mb-10 text-defaultText">
+                    <p class="
+                        mb-10 text-defaultText
+                        md:mb-6 md:text-spDefaultText
+                    ">
                         ここにはいい感じのニュースが入ってくる想定なんですよ。<br>
                         一体何が入ってくるのでしょうか？<br>
                         私には皆目見当がつきませんが。<br>
                         いいニュースだといいですね。<br>
                         それともブログも必要だったりするのかしら。<br>
                         それは後々やっていこうかしらね。<br>
-                        <br>
                         この両分もいけますかこの両分もいけますかこの両分もいけますかこの両分もいけますかこの両分もいけますかこの両分もいけますかこの両分もいけますかこの両分もいけますかこの両分もいけますかこの両分もいけますか
                     </p>
-                    <p class="text-defaultText">
+                    <p class="
+                        text-defaultText
+                        md:text-spDefaultText
+                    ">
                         ここにはいい感じのニュースが入ってくる想定なんですよ。<br>
                         一体何が入ってくるのでしょうか？<br>
                         私には皆目見当がつきませんが。<br>
                         いいニュースだといいですね。<br>
                         それともブログも必要だったりするのかしら。<br>
                         それは後々やっていこうかしらね。<br>
-                        <br>
                         この両分もいけますかこの両分もいけますかこの両分もいけますかこの両分もいけますかこの両分もいけますかこの両分もいけますかこの両分もいけますかこの両分もいけますかこの両分もいけますかこの両分もいけますか
                     </p>
                 </article>

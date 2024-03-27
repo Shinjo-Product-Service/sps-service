@@ -6,6 +6,10 @@ export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
+      screens: {
+        md: { max: "768px" },
+        // md: "768px",
+      },
       width: {
         defaultLayout: "128rem",
         mdLayout: "106.4rem",
@@ -14,6 +18,7 @@ export default {
       colors: {
         default: "#242424",
         key: "#5A93A4",
+        keyWeak: "#57768c",
         gray: "#AEAEAE",
         white: "#FCFCFC",
         lineGray: "#D3D3D3",
@@ -36,6 +41,27 @@ export default {
         ],
         sectionEnTitle: [
           "1.8rem",
+          {
+            fontWeight: "Regular",
+            lineHeight: "1.4",
+          },
+        ],
+        spDefaultText: [
+          "1.4rem",
+          {
+            fontWeight: "DemiLight",
+            lineHeight: "2",
+          },
+        ],
+        spSectionTitle: [
+          "2.8rem",
+          {
+            fontWeight: "normal",
+            lineHeight: "1.6",
+          },
+        ],
+        spSectionEnTitle: [
+          "1.4rem",
           {
             fontWeight: "Regular",
             lineHeight: "1.4",

@@ -57,9 +57,12 @@ const articleInfos = [
 ---
 
 <Layout title="works">
-    <main>
+    <main class="md:px-[1.6rem]">
         <!-- FV -->
-        <div class="flex flex-col gap-28 w-defaultLayout m-auto mt-64">
+        <div class="
+            flex flex-col gap-28 w-defaultLayout m-auto mt-64
+            md:w-full md:mt-40
+        ">
             <Breadcrumb
                 lists={[
                     { name: "ホーム", path: "/" },
@@ -67,14 +70,29 @@ const articleInfos = [
                     { name: "ブランディングした商品をEC機能を導入して販売" }
                 ]}
             />
-            <div class="w-mdLayout m-auto mb-24 pb-24 border-b border-lineGray">
-                <div class="w-smLayout m-auto">
-                    <h1 class="mb-16 text-[3.6rem] font-mincho">
+            <div class="
+                w-mdLayout m-auto mb-24 pb-24 border-b border-lineGray
+                md:w-full md:mb-16 md:pb-16
+            ">
+                <div class="
+                    w-smLayout m-auto
+                    md:w-full
+                ">
+                    <h1 class="
+                        mb-16 text-[3.6rem] font-mincho
+                        md:mb-8 md:text-[2.4rem]
+                    ">
                         ブランディングした商品をEC機能を導入して販売
                     </h1>
-                    <div class="grid grid-cols-[auto_1fr] gap-16">
+                    <div class="
+                        grid grid-cols-[auto_1fr] gap-16
+                        md:grid-cols-1 md:gap-8
+                    ">
                         <Image src="/assets/images/home/work.jpg" alt="泉菜株式会社" width={400} height={240} class="aspect-[1.618]" />
-                        <div class="w-full py-6">
+                        <div class="
+                            w-full py-6
+                            md:py-0
+                        ">
                             <div class="flex gap-3 w-fit px-5 py-3 border border-lineGray rounded-full">
                                 <Image src="/assets/images/home/work_icon.png" alt="泉菜株式会社" width={52} height={36} class="w-[2.6rem] h-auto" />
                                 <span class="text-[1.3rem]">
@@ -94,23 +112,41 @@ const articleInfos = [
                 </div>
             </div>
         </div>
-        <article class="w-smLayout m-auto mb-64">
-            <p class="text-defaultText">
+        <article class="
+            w-smLayout m-auto mb-64
+            md:w-full md:mb-40
+        ">
+            <p class="
+                text-defaultText
+                md:text-spDefaultText
+            ">
                 これこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっていますこれこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっていますこれこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっていますこれこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっていますこれこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっています。
             </p>
-            <ul class="flex flex-col gap-24 mt-32 ">
+            <ul class="
+                flex flex-col gap-24 mt-32
+                md:gap-16 md:mt-24
+            ">
                 {articleInfos.map((item, index) => (
-                    <>
-                    <li class="px-12">
+                    <li class="
+                        px-12 pb-16 border-b border-lineGray last:border-b-0
+                        md:px-0 md:pb-0 md:border-0
+                    ">
                         <div class="">
-                            <h2 class="text-[1.3rem] text-gray">{item.title}</h2>
-                            <h3 class="mt-6 mb-12 text-[2.4rem] font-mincho leading-relaxed">{item.oroginTitle}</h3>
+                            <h2 class="
+                                text-[1.3rem] text-gray
+                                md:text-[1.2rem]
+                            ">{item.title}</h2>
+                            <h3 class="
+                                mt-6 mb-12 text-[2.4rem] font-mincho leading-relaxed
+                                md:mt-4 md:mb-8 md:text-[1.8rem]
+                            ">{item.oroginTitle}</h3>
                         </div>
                         <Image src={item.image.src} alt={item.image.alt} width={item.image.width} height={item.image.height} class="w-full aspect-[1.618]" />
-                        <p class="mt-10 text-defaultText">{item.description}</p>
+                        <p class="
+                            mt-10 text-defaultText
+                            md:mt-6 md:text-spDefaultText
+                        ">{item.description}</p>
                     </li>
-                    {index !== articleInfos.length - 1 && <hr class="border-lineGray" />}
-                    </>
                 ))}
             </ul>
         </article>

@@ -9,11 +9,23 @@ interface Props {
 const {href, text} = Astro.props
 ---
 
-<a href={href} class="inline-flex items-center gap-8">
-    <span class="text-[1.8rem] underline underline-offset-1">
+<a href={href} class="inline-flex items-center gap-8 w-fit">
+    <span class="
+        text-[1.8rem] underline underline-offset-1
+        md:text-[1.4rem]
+    ">
         {text}
     </span>
-    <div class="flex justify-center items-center w-[4.8rem] h-[4.8rem] border border-lineGray rounded-full">
-        <Image src="/assets/icon/arrow.svg" alt="arrow" width={16} height={16.19} class="w-8" />
+    <div class="
+        flex justify-center items-center w-[4.8rem] h-[4.8rem] border border-lineGray rounded-full
+        md:w-[4rem] md:h-[4rem]
+    ">
+        <Image 
+            src="/assets/icon/arrow.svg" 
+            alt="arrow" 
+            width={16} 
+            height={16.19} 
+            class="w-8 md:w-6" 
+        />
     </div>
 </a>

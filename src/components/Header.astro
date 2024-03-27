@@ -1,38 +1,15 @@
 ---
-import Image from "astro/components/Image.astro"
+import Image from "astro/components/Image.astro";
+import menu from "../data/menu.json";
 
 const {type} = Astro.props
-
-
-const menu = [
-    {
-        name: 'ホーム',
-        url: '/'
-    },
-    {
-        name: '特長',
-        url: '/feature'
-    },
-    {
-        name: 'サービス',
-        url: '/service'
-    },
-    {
-        name: "実績",
-        url: '/works'
-    },
-    {
-        name: 'よくある質問',
-        url: '/faq'
-    },
-    {
-        name: "お知らせ",
-        url: '/news'
-    }
-]
+const {pathname} = Astro.url
 ---
 
-<header class="absolute top-0 left-0 grid grid-cols-[auto_1fr_auto] items-center w-full px-32 py-10">
+<header class="
+    absolute top-0 left-0 grid grid-cols-[auto_1fr_auto] items-center w-full px-32 py-10
+    md:flex justify-between md:px-[1.6rem] md:py-[1.2rem]
+">
     <a href="/" class="">
         <Image
             src="/logo.svg"
@@ -40,19 +17,26 @@ const menu = [
             width="112"
             height="66"
             loading={"eager"}
-            class="w-[11.2rem] h-[6.6rem]"
+            class="w-[11.2rem] h-[6.6rem] md:w-[6.713rem] md:h-[4.302rem]"
         />
     </a>
     {!type &&
-        <nav class="h-full">
+        <nav class="
+            h-full
+            md:hidden
+        ">
             <ul class="flex justify-center h-full">
                 {menu.map((item) => (
                     <li class="">
-                        <a href={item.url} class="flex justify-center items-center h-full px-10 py-2 text-[1.4rem]">{item.name}</a>
+                        <a href={item.url} class={`flex justify-center items-center h-full px-10 py-2 text-[1.4rem] ${pathname === item.url && "text-key"}`}>{item.name}</a>
                     </li>
                 ))}
             </ul>
         </nav>
-        <a href="/contact" class="px-8 py-4 text-[1.3rem] text-key border border-key rounded-full">お問い合わせ</a>
+        <a href="/contact" 
+           class="
+            px-8 py-4 text-[1.3rem] text-key border border-key rounded-full
+            md:w-fit md:px-6 md:py-3 md:text-[1.2rem]
+        ">お問い合わせ</a>
     }
 </header>
