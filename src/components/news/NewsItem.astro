@@ -1,8 +1,9 @@
 ---
+const {id, title, label} = Astro.props
 ---
 
 <a 
-    href="/news" 
+    href={`/news/${id}`} 
     class="
         grid grid-cols-[auto_1fr] items-center py-12 border-b border-lineGray
         md:grid-cols-1 md:py-6 md:px-[.8rem]
@@ -24,10 +25,10 @@
             inline-flex justify-center w-32 px-4 py-2 text-[1.2rem] leading-tight text-key border border-key rounded-md bg-key bg-opacity-10
             md:w-fit md:px-3 md:py-2 md:text-[1rem]
         ">
-            ニュース
+            { label }
         </span>
     </div>
     <p class="text-[1.4rem] leading-relaxed">
-        ここにお知らせが入ってきますから気をつけてくださいよ本当に
+        {title}
     </p>
 </a>

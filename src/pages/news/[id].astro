@@ -1,7 +1,32 @@
 ---
+import type { GetStaticPaths } from "astro";
 import Layout from '../../layouts/Layout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import Image from 'astro/components/Image.astro';
+import { newtClient } from "../../lib/newt";
+import type { NewsItemType } from "../../types";
+
+export const getStaticPaths = async () => {
+    const {items: newsList} = await newtClient.getContents<NewsItemType>({
+        appUid: 'sps',
+        modelUid: 'news',
+        query: {
+            limit: 5,
+            select: ['_id' ,'title', 'label', 'content', '_sys.updatedAt'],
+            content: {
+                fmt: 'text',
+            }
+        },
+    });
+    return newsList.map((news) => ({
+        params: { id: news._id },
+        props: {news},
+    }));
+};
+
+const { news } = Astro.props;
+console.log("news", news);
+
 ---
 
 <Layout title="works">
@@ -14,7 +39,7 @@ import Image from 'astro/components/Image.astro';
                 lists={[
                     { name: "ホーム", path: "/" },
                     { name: "お知らせ", path: "/news" },
-                    { name: "最新のニュースですよ" }
+                    { name: news.title }
                 ]}
             />
             <div class="
@@ -30,27 +55,28 @@ import Image from 'astro/components/Image.astro';
                                 md:text-[1.4rem]
                             "
                         >
-                            2024.01.01
+                            {news._sys.updatedAt}
                         </time>
                         <span class="
                             inline-flex justify-center px-4 py-2 text-[1.2rem] leading-tight text-key border border-key rounded-md bg-key bg-opacity-10
                             md:text-[1.1rem]
                         ">
-                            ニュース
+                            {news.label}
                         </span>
                     </div>
                     <h1 class="
                         mb-16 text-[3.2rem] font-mincho leading-relaxed
                         md:text-[2.4rem]
                     ">
-                        最新のニュースですよ
+                        {news.title}
                     </h1>
                 </div>
                 <article class="
                     mt-24
                     md:mt-10
                 ">
-                    <h2 class="
+                    {news.content}
+                    <!-- <h2 class="
                         mb-12 text-[2.2rem] font-normal
                         md:mb-8 md:text-[1.8rem]
                     ">
@@ -79,7 +105,7 @@ import Image from 'astro/components/Image.astro';
                         それともブログも必要だったりするのかしら。<br>
                         それは後々やっていこうかしらね。<br>
                         この両分もいけますかこの両分もいけますかこの両分もいけますかこの両分もいけますかこの両分もいけますかこの両分もいけますかこの両分もいけますかこの両分もいけますかこの両分もいけますかこの両分もいけますか
-                    </p>
+                    </p> -->
                 </article>
             </div>
         </div>

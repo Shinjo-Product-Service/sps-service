@@ -6,25 +6,25 @@ import Layout from '../../layouts/Layout.astro';
 
 const pointList = [
     {
-        title: "自社の名刺となるWebサイトを持続的に",
+        title: "自社の名刺となる\nWebサイトを持続的に",
         description: "もしあればここにそれを説明するテキストが入ってきますからね。入れるようにしておきましょうね。まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。",
         image: "/assets/images/feature/point_1.jpg",
         alt: "ポイント1"
     },
     {
-        title: "魅力を伝える手段としての自社紹介映像",
+        title: "魅力を伝える手段としての\n自社紹介映像",
         description: "もしあればここにそれを説明するテキストが入ってきますからね。入れるようにしておきましょうね。まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。",
         image: "/assets/images/feature/point_2.jpg",
         alt: "ポイント2"
     },
     {
-        title: "採用も販売もSNSでより効果的に",
+        title: "採用も販売もSNSで\nより効果的に",
         description: "もしあればここにそれを説明するテキストが入ってきますからね。入れるようにしておきましょうね。まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。",
         image: "/assets/images/feature/point_3.jpg",
         alt: "ポイント3"
     },
         {
-        title: "地方企業の最も大きな課題は採用",
+        title: "地方企業の\n最も大きな課題は採用",
         description: "もしあればここにそれを説明するテキストが入ってきますからね。入れるようにしておきましょうね。まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。",
         image: "/assets/images/feature/point_4.jpg",
         alt: "ポイント4"
@@ -174,15 +174,13 @@ const trustList = [
                                 md:grid-cols-1 md:gap-8
                             ">
                                 <div class={`${isOdd ? "order-2" : "order-1"} md:px-[.8rem] md:order-2`}>
-                                    <span class="text-[1.4rem] text-key font-urbanist">
+                                    <span class="text-[2em] text-key font-urbanist">
                                         0{index + 1}
                                     </span>
                                     <h3 class="
-                                        mt-8 mb-12 text-[2.6rem] font-mincho
+                                        mt-4 mb-12 text-[2.6rem] font-mincho whitespace-break-spaces leading-loose
                                         md:mt-2 md:mb-4 md:pb-6 md:text-[1.8rem] md:border-b md:border-lineGray
-                                    ">
-                                        {point.title}
-                                    </h3>
+                                    ">{point.title}</h3>
                                     <p class="
                                         text-[1.5rem] leading-loose
                                         md:text-[1.3rem]
