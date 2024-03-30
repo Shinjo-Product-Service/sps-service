@@ -1,56 +1,81 @@
 ---
+import type { GetStaticPaths } from "astro";
 import Layout from '../../layouts/Layout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import Fv from '../../components/section/Fv.astro';
 import Image from 'astro/components/Image.astro';
+import { newtClient } from "../../lib/newt";
+import type { WorksItemType } from '../../types';
 
-const info = [
+export const getStaticPaths = async () => {
+    const {items: worksList} = await newtClient.getContents<WorksItemType>({
+        appUid: 'sps',
+        modelUid: 'works',
+        query: {
+            // limit: 5,
+            // select: ['_id' ,'title', 'label', 'content', '_sys.updatedAt'],
+            // content: {
+            //     fmt: 'text',
+            // }
+        },
+    });
+    return worksList.map((work) => ({
+        params: { id: work._id },
+        props: {work},
+    }));
+};
+
+const {work} = Astro.props;
+console.log(work);
+
+
+const detailInformation = [
     {
         title: "業種",
-        description: "農業"
+        description: work.industry
     },
     {
         title: "従業員数",
-        description: "1~10人"
+        description: work.numberOfEmployees
     },
     {
         title: "課題",
-        description: "商品のブランドアピール不足と販売ルートの不足"
+        description: work.issue
     },
 ]
 
 const articleInfos = [
     {
         title: "導入前の課題",
-        oroginTitle: "自社の野菜のブランド価値が伝わらない",
-        description: "これこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっていますこれこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっていますこれこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっていますこれこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっていますこれこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっています。",
+        oroginTitle: work.beforeIntroduction.title,
+        description: work.beforeIntroduction.description,
         image: {
-            src: "/assets/images/home/work.jpg",
-            alt: "泉菜株式会社",
-            width: 420,
-            height: 360
+            src: work.beforeIntroduction.image.src,
+            alt: work.beforeIntroduction.image.altText,
+            width: work.beforeIntroduction.image.width,
+            height: work.beforeIntroduction.image.height
         }
     },
-        {
+    {
         title: "新庄プロダクトサービスを選んだ理由",
-        oroginTitle: "導入コストが課題だったけど無料なので試しに使ってみた",
-        description: "これこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっていますこれこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっていますこれこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっていますこれこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっていますこれこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっています。",
+        oroginTitle: work.selectedReason.title,
+        description: work.selectedReason.description,
         image: {
-            src: "/assets/images/home/work.jpg",
-            alt: "泉菜株式会社",
-            width: 420,
-            height: 360
+            src: work.selectedReason.image.src,
+            alt: work.selectedReason.image.altText,
+            width: work.selectedReason.image.width,
+            height: work.selectedReason.image.height
         }
     },
         {
         title: "導入後の成果・効果",
-        oroginTitle: "自社のECサイトで内製化することで売り上げ150%",
-        description: "これこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっていますこれこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっていますこれこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっていますこれこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっていますこれこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっています。",
+        oroginTitle: work.afterIntroduction.title,
+        description: work.afterIntroduction.description,
         image: {
-            src: "/assets/images/home/work.jpg",
-            alt: "泉菜株式会社",
-            width: 420,
-            height: 360
+            src: work.afterIntroduction.image.src,
+            alt: work.afterIntroduction.image.altText,
+            width: work.afterIntroduction.image.width,
+            height: work.afterIntroduction.image.height
         }
     },
 ]
@@ -67,7 +92,7 @@ const articleInfos = [
                 lists={[
                     { name: "ホーム", path: "/" },
                     { name: "実績", path: "/works" },
-                    { name: "ブランディングした商品をEC機能を導入して販売" }
+                    { name: work.title }
                 ]}
             />
             <div class="
@@ -82,25 +107,25 @@ const articleInfos = [
                         mb-16 text-[3.6rem] font-mincho
                         md:mb-8 md:text-[2.4rem]
                     ">
-                        ブランディングした商品をEC機能を導入して販売
+                        {work.title}
                     </h1>
                     <div class="
                         grid grid-cols-[auto_1fr] gap-16
                         md:grid-cols-1 md:gap-8
                     ">
-                        <Image src="/assets/images/home/work.jpg" alt="泉菜株式会社" width={400} height={240} class="aspect-[1.618]" />
+                        <Image src={work.thumbnail.src} alt={work.thumbnail.altText} width={work.thumbnail.width} height={work.thumbnail.height} class="" />
                         <div class="
                             w-full py-6
                             md:py-0
                         ">
                             <div class="flex gap-3 w-fit px-5 py-3 border border-lineGray rounded-full">
-                                <Image src="/assets/images/home/work_icon.png" alt="泉菜株式会社" width={52} height={36} class="w-[2.6rem] h-auto" />
+                                <Image src={work.client.logo.src} alt={work.client.logo.altText} width={work.client.logo.width} height={work.client.logo.height} class="w-[2.6rem] h-auto" />
                                 <span class="text-[1.3rem]">
-                                    泉菜株式会社
+                                    {work.client.name}
                                 </span>
                             </div>
                             <div class="flex flex-col gap-4 w-fit mt-10">
-                                {info.map((item) => (
+                                {detailInformation.map((item) => (
                                     <dl class="grid grid-cols-[6rem_1fr] gap-8">
                                         <dt class="text-[1.3rem] text-gray">{item.title}</dt>
                                         <dd class="text-[1.3rem]">{item.description}</dd>
@@ -120,7 +145,7 @@ const articleInfos = [
                 text-defaultText
                 md:text-spDefaultText
             ">
-                これこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっていますこれこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっていますこれこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっていますこれこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっていますこれこういうプロジェクトでしたという概要が入ってくる想定でやらせてもらっています。
+                {work.description}
             </p>
             <ul class="
                 flex flex-col gap-24 mt-32

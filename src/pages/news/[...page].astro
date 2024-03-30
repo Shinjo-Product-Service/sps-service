@@ -9,7 +9,7 @@ import type { GetStaticPathsOptions } from 'astro';
 import Pagination from '../../components/section/Pagination.astro';
 
 export const getStaticPaths = async ({ paginate }: GetStaticPathsOptions) => {
-    const {items: newsList} = await newtClient.getContents<NewsItemType>({
+    const {items: newsItems} = await newtClient.getContents<NewsItemType>({
         appUid: 'sps',
         modelUid: 'news',
         query: {
@@ -21,7 +21,7 @@ export const getStaticPaths = async ({ paginate }: GetStaticPathsOptions) => {
             }
         },
     });
-    return paginate(newsList, {pageSize: 10});
+    return paginate(newsItems, {pageSize: 10});
 };
 
 const { page } = Astro.props
