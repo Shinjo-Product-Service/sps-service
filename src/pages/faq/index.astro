@@ -3,60 +3,16 @@ import Layout from '../../layouts/Layout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import Fv from '../../components/section/Fv.astro';
 import FaqItem from '../../components/faq/FaqItem.astro';
+import { newtClient } from '../../lib/newt';
+import type { FaqItemType } from '../../types';
 
-const faqList = [
-    {
-        title: "サブスクプランについて",
-        items: [
-            {
-                question: "制作期間はどのくらいになりますか？",
-                answer: "こちらも規模によりますが、通常、5～6カ月ほどになります。長期化する場合には、フェーズを分けて公開することも可能です。公開時期の希望があれば、お問い合わせ時にお申しつけください。"
-            },
-            {
-                question: "制作期間はどのくらいになりますか？",
-                answer: "こちらも規模によりますが、通常、5～6カ月ほどになります。長期化する場合には、フェーズを分けて公開することも可能です。公開時期の希望があれば、お問い合わせ時にお申しつけください。"
-            },
-            {
-                question: "制作期間はどのくらいになりますか？",
-                answer: "こちらも規模によりますが、通常、5～6カ月ほどになります。長期化する場合には、フェーズを分けて公開することも可能です。公開時期の希望があれば、お問い合わせ時にお申しつけください。"
-            },
-        ]
-    },
-        {
-        title: "Webサイトについて",
-        items: [
-            {
-                question: "制作期間はどのくらいになりますか？",
-                answer: "こちらも規模によりますが、通常、5～6カ月ほどになります。長期化する場合には、フェーズを分けて公開することも可能です。公開時期の希望があれば、お問い合わせ時にお申しつけください。"
-            },
-            {
-                question: "制作期間はどのくらいになりますか？",
-                answer: "こちらも規模によりますが、通常、5～6カ月ほどになります。長期化する場合には、フェーズを分けて公開することも可能です。公開時期の希望があれば、お問い合わせ時にお申しつけください。"
-            },
-            {
-                question: "制作期間はどのくらいになりますか？",
-                answer: "こちらも規模によりますが、通常、5～6カ月ほどになります。長期化する場合には、フェーズを分けて公開することも可能です。公開時期の希望があれば、お問い合わせ時にお申しつけください。"
-            },
-        ]
-    },
-    {
-        title: "映像制作について",
-        items: [
-            {
-                question: "制作期間はどのくらいになりますか？",
-                answer: "こちらも規模によりますが、通常、5～6カ月ほどになります。長期化する場合には、フェーズを分けて公開することも可能です。公開時期の希望があれば、お問い合わせ時にお申しつけください。"
-            },
-            {
-                question: "制作期間はどのくらいになりますか？",
-                answer: "こちらも規模によりますが、通常、5～6カ月ほどになります。長期化する場合には、フェーズを分けて公開することも可能です。公開時期の希望があれば、お問い合わせ時にお申しつけください。"
-            },
-            {
-                question: "制作期間はどのくらいになりますか？",
-                answer: "こちらも規模によりますが、通常、5～6カ月ほどになります。長期化する場合には、フェーズを分けて公開することも可能です。公開時期の希望があれば、お問い合わせ時にお申しつけください。"
-            },
-        ]
-    },
-]
+const {items: worksItems} = await newtClient.getContents<FaqItemType>({
+    appUid: 'sps',
+    modelUid: 'faq',
+    query: {
+        order: ['_sys.createdAt']
+    },  
+});
 ---
 
 
@@ -84,7 +40,7 @@ const faqList = [
             flex flex-col gap-40 w-mdLayout m-auto mt-48 mb-64
             md:w-full md:gap-24 md:mt-16 md:mb-40 md:px-[1.6rem]
         ">
-            {faqList.map((item, index) =>
+            {worksItems.map((item, index) =>
                 <section class="">
                     <h2 class="
                         mb-20 text-[2.8rem] font-mincho
@@ -96,11 +52,11 @@ const faqList = [
                         flex flex-col gap-16
                         md:gap-8
                     ">
-                        {item.items.map((faq, index) =>
+                        {item.item.map((faq, index) => 
                             <FaqItem
                                 index={index}
-                                question={faq.question}
-                                answer={faq.answer}
+                                question={faq.title}
+                                answer={faq.content}
                             />
                         )}
                     </ul>

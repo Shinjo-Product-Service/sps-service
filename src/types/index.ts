@@ -73,3 +73,24 @@ export type WorksItemType = {
   selectedReason: articleInfoType;
   afterIntroduction: articleInfoType;
 };
+
+export type FaqItemType = {
+  _id: string;
+  _sys: {
+    raw: {
+      createdAt: string;
+      updatedAt: string;
+      firstPublishedAt: string;
+      publishedAt: string;
+    };
+    customOrder: number;
+    createdAt: Date;
+    updatedAt: Date;
+  };
+  title: string;
+  item: {
+    title: string;
+    content: string;
+    _id: string;
+  }[];
+};
