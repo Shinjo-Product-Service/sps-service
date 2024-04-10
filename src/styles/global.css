@@ -8,7 +8,7 @@
 @tailwind utilities;
 
 html {
-  font-size: calc(10 / 1440 * 100vw);
+  /* font-size: calc(10 / 1440 * 100vw); */
   font-family: "Noto Sans JP", sans-serif;
   font-weight: 300;
   color: #242424;
@@ -16,6 +16,6 @@ html {
 
 @media screen and (max-width: 768px) {
   html {
-    font-size: calc(10 / 390 * 100vw);
+    /* font-size: calc(10 / 390 * 100vw); */
   }
 }

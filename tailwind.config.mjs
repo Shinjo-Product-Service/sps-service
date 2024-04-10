@@ -11,7 +11,7 @@ export default {
         // md: "768px",
       },
       width: {
-        defaultLayout: "128rem",
+        defaultLayout: "80rem",
         mdLayout: "106.4rem",
         smLayout: "84.6rem",
       },
@@ -26,7 +26,7 @@ export default {
       },
       fontSize: {
         defaultText: [
-          "1.6rem",
+          "1rem",
           {
             fontWeight: "DemiLight",
             lineHeight: "2",
