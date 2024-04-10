@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import Link from '../components/Link.astro';
 import NewsItem from '../components/news/NewsItem.astro';
 import Image from 'astro/components/Image.astro';
+import { newtClient } from '../lib/newt';
+import type { NewsItemType } from '../types';
 
 const featureList = [
 	{
@@ -63,6 +65,16 @@ const workInformations = [
 		description: "商品のブランドアピール不足と販売ルートの不足"
 	},
 ]
+
+const {items: newsList} = await newtClient.getContents<NewsItemType>({
+	appUid: 'sps',
+	modelUid: 'news',
+	query: {
+		limit: 5,
+		select: ['_id' ,'title', 'label', '_sys.updatedAt'],
+	},
+})
+
 ---
 
 <Layout title="Welcome to Astro.">
@@ -70,7 +82,7 @@ const workInformations = [
 		<!-- FV -->
 		<!-- <div class="flex items-center w-screen h-screen py-[10vw]"> -->
 		<div class="
-			flex py-[12rem]
+			flex pt-[12rem]
 			md:h-fit md:pt-[9rem] md:pb-0
 		">
 			<!-- <h1 class="ml-32 text-[12.5vw] font-mincho leading-[125%] tracking-[1.8%]"> -->
@@ -309,21 +321,16 @@ const workInformations = [
 				</div>
 				<div class="">
 					<ul class="">
-						<li class="">
-							<NewsItem />
-						</li>
-						<li class="">
-							<NewsItem />
-						</li>
-						<li class="">
-							<NewsItem />
-						</li>
-						<li class="">
-							<NewsItem />
-						</li>
-						<li class="">
-							<NewsItem />
-						</li>
+						{newsList.map((newsItem) => (
+							<li class="">
+								<NewsItem 
+									id={newsItem._id}
+									title={newsItem.title}
+									label={newsItem.label}
+									content={newsItem.content}
+								/>
+							</li>
+						))}
 					</ul>
 				</div>
 			</div>
