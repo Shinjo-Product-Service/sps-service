@@ -40,7 +40,7 @@ export default {
           },
         ],
         sectionEnTitle: [
-          "1.8rem",
+          "1.15rem",
           {
             fontWeight: "Regular",
             lineHeight: "1.4",

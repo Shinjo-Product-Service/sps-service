@@ -41,7 +41,7 @@ const serviceList = [
 		description: "もしあればここにそれを説明するテキストが入ってきますからね。入れるようにしておきましょうね。まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。"
 	},
 	{
-		title: "名刺・チラシデザイ",
+		title: "名刺・チラシデザイン",
 		description: "もしあればここにそれを説明するテキストが入ってきますからね。入れるようにしておきましょうね。まあ何が入ってくるのかは全然わからないのですけれども、あればいいですね。"
 	}
 ]
@@ -78,10 +78,10 @@ const {items: newsList} = await newtClient.getContents<NewsItemType>({
 ---
 
 <Layout title="Welcome to Astro.">
-	<main>
+	<main class="mb-40">
 		<!-- FV -->
 		<div class="
-			flex justify-center pt-36 mx-20
+			flex justify-center mt-36 px-20
 			md:h-fit md:pt-[9rem] md:pb-0
 		">
 			<h1 class="
@@ -94,23 +94,23 @@ const {items: newsList} = await newtClient.getContents<NewsItemType>({
 			</h1>
 		</div>
 		<!-- FEATURE -->
-		<!-- <section class="
-			w-defaultLayout m-auto mt-56
+		<section class="
+			mt-48 px-20
 			md:mt-24 md:w-full md:px-[1.6rem]
 		">
 			<div class="
-				grid grid-cols-[1fr_auto] gap-12 items-end mb-24
+				grid grid-cols-[1fr_auto] gap-12 items-end mb-16
 				md:flex md:flex-col md:gap-10 md:mb-16 md:justify-end
 			">
 				<div class="">
 					<h2 class="
-						mb-8 text-sectionEnTitle text-key font-urbanist
+						mb-5 text-sectionEnTitle text-key font-urbanist
 						md:mb-5 md:text-spSectionEnTitle
 					">
 						Feature
 					</h2>
 					<h3 class="
-						mb-16 text-[4.8rem] font-mincho leading-normal
+						mb-10 text-5xl font-mincho leading-normal
 						md:mb-6 md:text-spSectionTitle
 					">
 						私たちには選ばれる理由が<br>
@@ -127,7 +127,7 @@ const {items: newsList} = await newtClient.getContents<NewsItemType>({
 				<Link href="/feature" text="特長をくわしく見る" />
 			</div>
 			<div class="md:w-full md:overflow-scroll">
-				<ul class="grid grid-cols-3 gap-8 md:w-max">
+				<ul class="grid grid-cols-3 gap-5 md:w-max">
 					{featureList.map((feature) => (
 						<li class="">
 							<Image 
@@ -135,11 +135,11 @@ const {items: newsList} = await newtClient.getContents<NewsItemType>({
 								alt={feature.alt} 
 								width={10} 
 								height={10} 
-								class="w-full mb-4 md:w-[30rem]" 
+								class="w-full h-72 object-cover md:w-[30rem]" 
 								// aria-label={feature.title}
 							/>
 							<p class="
-								mt-6 text-[1.6rem] font-mincho
+								mt-4 text-base font-mincho
 								md:text-[1.5rem]
 							">
 								{feature.title}
@@ -148,31 +148,31 @@ const {items: newsList} = await newtClient.getContents<NewsItemType>({
 					))}
 				</ul>
 			</div>
-		</section> -->
+		</section>
 		<!-- SERVICE -->
-		<!-- <section class="
-			w-defaultLayout m-auto mt-56
+		<section class="
+			mt-48 px-20
 			md:mt-24 md:w-full md:px-[1.6rem]
 		">
 			<h2 class="
-				mb-8 text-sectionEnTitle text-key font-urbanist
+				mb-5 text-sectionEnTitle text-key font-urbanist
 				md:mb-5 md:text-spSectionEnTitle
 			">
 				Service
 			</h2>
 			<div class="
-				grid grid-cols-[1fr_auto]
+				grid grid-cols-[1fr_auto] items-end
 				md:grid-cols-1
 			">
 				<h3 class="
-					text-[4.4rem] font-mincho leading-relaxed
+					text-4xl font-mincho leading-relaxed
 					md:mb-6 md:text-spSectionTitle
 				">
 					お困りのデジタル課題を<br>
 					解決します
 				</h3>
 				<p class="
-					w-[40rem] text-defaultText
+					w-[30rem] text-defaultText
 					md:w-full md:text-spDefaultText
 				">
 					もしあればここにそれを説明するテキストが入ってきますからね。入れるようにしておきましょうね。
@@ -180,24 +180,24 @@ const {items: newsList} = await newtClient.getContents<NewsItemType>({
 				</p>
 			</div>
 			<div class="
-				mt-32
+				mt-20
 				md:mt-4
 			">
 				<ul class="
-					grid grid-cols-4 gap-8
+					grid grid-cols-4 gap-5
 					md:grid-cols-1 md:gap-0
 				">
 					{serviceList.map((service) => (
 						<li class="
-							p-12 border border-lineGray rounded-xl
+							px-8 py-6 border border-lineGray rounded-lg
 							md:px-5 md:py-10 md:border-r-0 md:border-l-0 md:border-t-0 md:rounded-none
 						">
 							<h4 class="
-								mb-5 text-[1.7rem] font-mincho
+								mb-4 text-lg font-mincho
 								md:mb-4 md:text-[1.4rem] 
 							">{service.title}</h4>
 							<p class="
-								text-[1.3rem] leading-relaxed
+								text-sm leading-relaxed
 								md:text-[1.2rem]
 							">{service.description}</p>
 						</li>
@@ -206,23 +206,23 @@ const {items: newsList} = await newtClient.getContents<NewsItemType>({
 				</ul>
 			</div>
 			<div class="
-				flex justify-end mt-24
+				flex justify-end mt-16
 				md:mt-10
 			">
 				<Link href="/service" text="サービスをくわしく見る" />
 			</div>
-		</section> -->
+		</section>
 		<!-- WORKS -->
-		<!-- <section class="
-			grid grid-cols-2 gap-32 mt-56 w-defaultLayout m-auto
+		<section class="
+			grid grid-cols-2 gap-20 mt-48 px-20
 			md:grid-cols-1 md:gap-12 md:mt-24 md:w-full md:px-[1.6rem]
 		">
 			<div class="
-				grid grid-cols-[auto_1fr] gap-[1.8rem]
+				grid grid-cols-[auto_1fr] gap-3
 				md:grid-cols-1 md:gap-0
 			">
 				<h2 class="
-					w-36 mb-8 py-4 text-sectionEnTitle text-key font-urbanist
+					w-24 mb-8 py-3 text-sectionEnTitle text-key font-urbanist
 					md:w-full md:mb-5 md:p-0 md:text-spSectionEnTitle
 				">
 					Works
@@ -232,14 +232,14 @@ const {items: newsList} = await newtClient.getContents<NewsItemType>({
 					md:grid-cols-1
 				">
 					<h3 class="
-						mb-16 text-[4.8rem] font-mincho leading-normal
+						mb-8 text-5xl font-mincho leading-normal
 						md:mb-6 md:text-spSectionTitle
 					">
 						これまでの<br>
 						お客様成功事例
 					</h3>
 					<p class="
-						text-defaultText mb-28
+						text-defaultText
 						md:text-spDefaultText md:mb-10
 					">
 						もしあればここにそれを説明するテキストが入ってきますからね。入れるようにしておきましょうね。
@@ -249,16 +249,16 @@ const {items: newsList} = await newtClient.getContents<NewsItemType>({
 				</div>
 			</div>
 			<div class="md:w-full">
-				<Image src="/assets/images/home/work.jpg" alt="制作実績" width={600} height={340} class="w-full" />
-				<div class="mt-8">
+				<Image src="/assets/images/home/work.jpg" alt="制作実績" width={600} height={340} class="w-full h-80 object-cover rounded-lg" />
+				<div class="mt-5 px-2">
 					<h4 class="
-						mb-8 pb-6 text-[2rem] font-mincho border-b border-lineGray
+						mb-5 pb-4 text-xl font-mincho border-b border-lineGray
 						md:text-[1.6rem] md:mb-5 md:pb-5
 					">
 						ブランディングした商品をEC機能を導入して販売
 					</h4>
 					<div class="
-						flex gap-3 w-fit px-5 py-3 border border-lineGray rounded-full
+						flex items-center gap-2 w-fit px-3 py-2 border border-lineGray rounded-full
 						md:gap-2
 					">
 						<Image 
@@ -266,23 +266,23 @@ const {items: newsList} = await newtClient.getContents<NewsItemType>({
 							alt="制作実績" 
 							width={26} 
 							height={17.33} 
-							class="aspect-[1.618] md:w-2.2rem" />
+							class="w-8 h-fit md:w-2.2rem" />
 						<span class="
-							text-[1.3rem]
+							text-sm
 							md:text-[1.2rem]
 						">
 							泉菜株式会社
 						</span>
 					</div>
-					<div class="flex flex-col gap-2 mt-5">
+					<div class="flex flex-col gap-2 mt-3">
 						{workInformations.map((workInformation) => (
-							<dl class="grid grid-cols-[6rem_1fr] gap-8">
+							<dl class="grid grid-cols-[4rem_1fr] gap-5">
 								<dt class="
-									text-[1.3rem] text-gray
+									text-sm text-gray
 									md:text-[1.2rem]
 								">{workInformation.title}</dt>
 								<dd class="
-									text-[1.3rem]
+									text-sm
 									md:text-[1.2rem]
 								">{workInformation.description}</dd>
 							</dl>
@@ -290,14 +290,14 @@ const {items: newsList} = await newtClient.getContents<NewsItemType>({
 					</div>
 				</div>
 			</div>
-		</section> -->
+		</section>
 		<!-- NEWS -->
-		<!-- <section class="
-			flex flex-col gap-16 items-end w-defaultLayout m-auto mt-56 mb-64 pl-[10.8rem]
+		<section class="
+			flex flex-col gap-12 items-end mt-48 mx-20 pl-28
 			md:gap-10 md:w-full md:mt-24 md:mb-40 md:px-[1.6rem]
 		">
 			<div class="
-				grid grid-cols-[auto_1fr] gap-48 w-full
+				grid grid-cols-[auto_1fr] gap-36 w-full
 				md:grid-cols-1 md:gap-6
 			">
 				<div class="
@@ -311,7 +311,7 @@ const {items: newsList} = await newtClient.getContents<NewsItemType>({
 						News
 					</h2>
 					<h3 class="
-						mb-8 text-[4rem] font-mincho order-1
+						mb-5 text-4xl font-mincho order-1
 						md:mb-0 md:text-spSectionTitle md:order-2
 					">
 						最新のお知らせ
@@ -333,7 +333,7 @@ const {items: newsList} = await newtClient.getContents<NewsItemType>({
 				</div>
 			</div>
 			<Link href="/news" text="お知らせ一覧を見る" />
-		</section> -->
+		</section>
 	</main>
 </Layout>
  
