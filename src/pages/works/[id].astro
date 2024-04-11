@@ -82,10 +82,13 @@ const articleInfos = [
 ---
 
 <Layout title="works">
-    <main class="md:px-[1.6rem]">
+    <main class="
+        mb-40 px-20 
+        md:px-[1.6rem]
+    ">
         <!-- FV -->
         <div class="
-            flex flex-col gap-28 w-defaultLayout m-auto mt-64
+            flex flex-col gap-16 mt-40
             md:w-full md:mt-40
         ">
             <Breadcrumb
@@ -96,39 +99,38 @@ const articleInfos = [
                 ]}
             />
             <div class="
-                w-mdLayout m-auto mb-24 pb-24 border-b border-lineGray
+                m-auto mb-20 pb-20 border-b border-lineGray
                 md:w-full md:mb-16 md:pb-16
             ">
                 <div class="
-                    w-smLayout m-auto
+                     m-auto
                     md:w-full
                 ">
-                    <h1 class="
-                        mb-16 text-[3.6rem] font-mincho
-                        md:mb-8 md:text-[2.4rem]
-                    ">
-                        {work.title}
-                    </h1>
                     <div class="
-                        grid grid-cols-[auto_1fr] gap-16
+                        grid grid-cols-2 gap-16 px-28
                         md:grid-cols-1 md:gap-8
                     ">
-                        <Image src={work.thumbnail.src} alt={work.thumbnail.altText} width={work.thumbnail.width} height={work.thumbnail.height} class="w-[28rem] md:w-full" />
+                        <Image src={work.thumbnail.src} alt={work.thumbnail.altText} width={work.thumbnail.width} height={work.thumbnail.height} class="w-full" />
                         <div class="
-                            w-full py-6
-                            md:py-0
+                            py-4
                         ">
-                            <div class="flex gap-3 w-fit px-5 py-3 border border-lineGray rounded-full">
-                                <Image src={work.client.logo.src} alt={work.client.logo.altText} width={work.client.logo.width} height={work.client.logo.height} class="w-[2.6rem] h-auto" />
-                                <span class="text-[1.3rem]">
+                            <h1 class="
+                                mb-10 text-3xl font-mincho leading-relaxed
+                                md:mb-8 md:text-[2.4rem]
+                            ">
+                                {work.title}
+                            </h1>
+                            <div class="flex items-center gap-2 w-fit px-4 py-1 border border-lineGray rounded-full">
+                                <Image src={work.client.logo.src} alt={work.client.logo.altText} width={work.client.logo.width} height={work.client.logo.height} class="w-8 h-fit md:w-2.2rem" />
+                                <span class="text-xs">
                                     {work.client.name}
                                 </span>
                             </div>
-                            <div class="flex flex-col gap-4 w-fit mt-10">
+                            <div class="flex flex-col gap-2 mt-8">
                                 {detailInformation.map((item) => (
-                                    <dl class="grid grid-cols-[6rem_1fr] gap-8">
-                                        <dt class="text-[1.3rem] text-gray">{item.title}</dt>
-                                        <dd class="text-[1.3rem]">{item.description}</dd>
+                                    <dl class="grid grid-cols-[4rem_1fr] gap-5">
+                                        <dt class="text-sm text-gray">{item.title}</dt>
+                                        <dd class="text-sm">{item.description}</dd>
                                     </dl>
                                 ))}
                             </div>
@@ -138,42 +140,44 @@ const articleInfos = [
             </div>
         </div>
         <article class="
-            w-smLayout m-auto mb-64
+            grid grid-cols-12 gap-5
             md:w-full md:mb-40
         ">
-            <p class="
-                text-defaultText
-                md:text-spDefaultText
-            ">
-                {work.description}
-            </p>
-            <ul class="
-                flex flex-col gap-24 mt-32
-                md:gap-16 md:mt-24
-            ">
-                {articleInfos.map((item, index) => (
-                    <li class="
-                        px-12 pb-16 border-b border-lineGray last:border-b-0
-                        md:px-0 md:pb-0 md:border-0
-                    ">
-                        <div class="">
-                            <h2 class="
-                                text-[1.3rem] text-gray
-                                md:text-[1.2rem]
-                            ">{item.title}</h2>
-                            <h3 class="
-                                mt-6 mb-12 text-[2.4rem] font-mincho leading-relaxed
-                                md:mt-4 md:mb-8 md:text-[1.8rem]
-                            ">{item.oroginTitle}</h3>
-                        </div>
-                        <Image src={item.image.src} alt={item.image.alt} width={item.image.width} height={item.image.height} class="w-full aspect-[1.618]" />
-                        <p class="
-                            mt-10 text-defaultText
-                            md:mt-6 md:text-spDefaultText
-                        ">{item.description}</p>
-                    </li>
-                ))}
-            </ul>
+            <div class="col-start-3 col-end-12">
+                <p class="
+                    px-20 text-defaultText
+                    md:text-spDefaultText
+                ">
+                    {work.description}
+                </p>
+                <ul class="
+                    flex flex-col gap-20 mt-20
+                    md:gap-16 md:mt-24
+                ">
+                    {articleInfos.map((item, index) => (
+                        <li class="
+                            px-20 pb-20 border-b border-lineGray last:p-0 last:border-b-0
+                            md:px-0 md:pb-0 md:border-0
+                        ">
+                            <div class="mb-9">
+                                <h2 class="
+                                    text-sm text-gray
+                                    md:text-[1.2rem]
+                                ">{item.title}</h2>
+                                <h3 class="
+                                    mt-4 text-2xl font-mincho leading-relaxed
+                                    md:mt-4 md:mb-8 md:text-[1.8rem]
+                                ">{item.oroginTitle}</h3>
+                            </div>
+                            <Image src={item.image.src} alt={item.image.alt} width={item.image.width} height={item.image.height} class="w-full" />
+                            <p class="
+                                mt-7 text-defaultText
+                                md:mt-6 md:text-spDefaultText
+                            ">{item.description}</p>
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </article>
     </main>
 </Layout>

@@ -67,10 +67,10 @@ console.log(worksList[0].client);
 ---
 
 <Layout title="works">
-    <main>
+    <main class="mb-40">
         <!-- FV -->
         <div class="
-            flex flex-col gap-28 w-defaultLayout m-auto mt-64
+            flex flex-col gap-16 mt-40 px-20
             md:w-full md:gap-16 md:mt-40
         ">
             <Breadcrumb
@@ -87,11 +87,11 @@ console.log(worksList[0].client);
         </div>
         <!-- MAIN -->
         <div class="
-            mt-32 mb-64
+            mt-40
             md:mt-16 md:mb-40 md:px-[1.6rem]
         ">
             <ul class="
-                grid grid-cols-3 gap-x-8 gap-y-24 w-defaultLayout m-auto
+                grid grid-cols-3 gap-x-5 gap-y-12 px-20
                 md:grid-cols-1 md:gap-16 md:w-full
             ">
                 {worksList.map((workInformation, index) => {
@@ -113,22 +113,22 @@ console.log(worksList[0].client);
                     <li class="">
                         <a href={`/works/${workInformation._id}`} class="">
                             <Image src={workInformation.thumbnail.src} alt={workInformation.thumbnail.altText} width={workInformation.thumbnail.width} height={workInformation.thumbnail.height} class="w-full" />
-                            <div class="mt-8">
-                                <h4 class="mb-7 pb-6 text-[1.8rem] font-mincho border-b border-lineGray">
+                            <div class="mt-5 px-2">
+                                <h4 class="mb-5 pb-4 text-xl font-mincho border-b border-lineGray">
                                     {workInformation.title}
                                 </h4>
-                                <div class="flex justify-center items-center gap-3 w-fit px-5 py-3 border border-lineGray rounded-full">
-                                    <Image src={workInformation.client.logo.src} alt={`${workInformation.client.name}のロゴ`} width={workInformation.client.logo.width} height={workInformation.client.logo.height} class="w-[2.6rem] h-auto" />
-                                    <span class="text-[1.3rem]">
+                                <div class="flex items-center gap-2 w-fit px-4 py-1 border border-lineGray rounded-full">
+                                    <Image src={workInformation.client.logo.src} alt={`${workInformation.client.name}のロゴ`} width={workInformation.client.logo.width} height={workInformation.client.logo.height} class="w-8 h-fit md:w-2.2rem" />
+                                    <span class="text-xs">
                                         {workInformation.client.name}
                                     </span>
                                 </div>
                                 <div class="flex flex-col gap-2 mt-5">
                                     {detailInformation.map((detail, index) => {
                                         return (
-                                            <dl class="grid grid-cols-[6rem_1fr] gap-8">
-                                                <dt class="text-[1.3rem] text-gray">{detail.title}</dt>
-                                                <dd class="text-[1.3rem]">{detail.description}</dd>
+                                            <dl class="grid grid-cols-[4rem_1fr] gap-5">
+                                                <dt class="text-sm text-gray">{detail.title}</dt>
+                                                <dd class="text-sm">{detail.description}</dd>
                                             </dl>
                                         )
                                     })}
