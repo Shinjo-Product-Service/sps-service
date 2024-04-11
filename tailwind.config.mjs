@@ -33,7 +33,7 @@ export default {
           },
         ],
         sectionTitle: [
-          "3.2rem",
+          "2rem",
           {
             fontWeight: "normal",
             lineHeight: "1.8",
