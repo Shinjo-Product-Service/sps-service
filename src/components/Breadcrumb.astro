@@ -6,12 +6,12 @@ interface ListItem {
 }
 ---
 
-<nav class="md:px-[1.6rem] overflow-scroll">
+<nav class="md:px-2 md:overflow-y-scroll">
     <ol class="flex">
         {
             lists.map((list: ListItem, index: number) => (
                 <li class="
-                    text-[1.2rem] whitespace-nowrap
+                    text-xs whitespace-nowrap
                     md:text-[1.1rem] 
                 ">
                     {lists.length - 1 !==index ? (
