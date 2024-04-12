@@ -1,5 +1,6 @@
 ---
-const {id, title, label} = Astro.props
+import dayjs from 'dayjs'
+const {id, updatedAt, title, label} = Astro.props
 ---
 
 <a 
@@ -19,7 +20,7 @@ const {id, title, label} = Astro.props
                 text-sm text-gray font-urbanist font-light
                 md:text-[1.3rem]
             ">
-            2024.04.04
+            {dayjs(`${updatedAt}`).format('YYYY.M.D')}
         </time>
         <span class="
             inline-flex justify-center w-20 px-2 py-1 text-xs text-key leading-normal border border-key rounded-md bg-key bg-opacity-10
