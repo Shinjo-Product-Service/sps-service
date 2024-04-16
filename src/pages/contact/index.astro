@@ -52,12 +52,12 @@ const formList = [
 
 <SimpleLayout title="contact">
   <main class="
-    w-smLayout m-auto mt-64 mb-48
+    w-smLayout m-auto mt-40 mb-48
     md:w-full md:mt-48 md:px-[1.6rem] md:mb-36
   ">
     <div class="">
       <h1 class="
-        mb-10 text-[3.6rem] font-mincho
+        mb-8 text-4xl font-mincho
         md:text-[2.4rem] md:mb-8
       ">
           お問い合わせ
@@ -74,25 +74,25 @@ const formList = [
     <form 
       action="" 
       class="
-        flex flex-col gap-12 mt-24 px-32 py-20 border border-lineGray rounded-2xl
+        flex flex-col gap-8 mt-16 px-16 py-10 border border-lineGray rounded-2xl
         md:gap-10 md:mt-16 md:p-0 md:border-0 md:rounded-none
       "
     >
       {formList.map((form) => (
         <div class="">
           <label for="" class="
-            flex items-center gap-8 mb-4
+            flex items-center gap-4 mb-3
             md:gap-6
           ">
             <span class="
-              text-[1.6rem] font-normal leading-loose
+              text-base font-normal leading-loose
               md:text-[1.5rem]
             ">
               {form.label}
             </span>
             {form.required && (
               <span class="
-                px-4 py-1 text-[1.1rem] text-key border border-key bg-key bg-opacity-10 rounded-full
+                px-3 py-1 text-xs text-key border border-key bg-key bg-opacity-10 rounded-full
               ">
                 必須
               </span>
@@ -105,7 +105,7 @@ const formList = [
               placeholder={form.placeholder}
               required={form.required}
               class="
-                w-full h-48 p-6 text-[1.6rem] border border-lineGray rounded-xl
+                w-full h-48 p-3 text-base border border-lineGray rounded-lg
               "
             ></textarea>
           ) : (
@@ -116,7 +116,7 @@ const formList = [
               placeholder={form.placeholder}
               required={form.required}
               class="
-                w-full p-6 text-[1.6rem] border border-lineGray rounded-xl
+                w-full p-3 text-base border border-lineGray rounded-lg
               "
             />
           )}
@@ -124,7 +124,7 @@ const formList = [
       ))}
       <button
         type="submit"
-        class="w-full py-6 text-[1.5rem] text-white font-normal bg-key rounded-xl"
+        class="w-full p-4 text-base text-white font-normal bg-key rounded-full"
       >
         問い合わせる
       </button>
