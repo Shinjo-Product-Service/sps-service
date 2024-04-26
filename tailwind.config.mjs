@@ -11,9 +11,9 @@ export default {
         // md: "768px",
       },
       width: {
-        defaultLayout: "128rem",
-        mdLayout: "106.4rem",
-        smLayout: "84.6rem",
+        defaultLayout: "80rem",
+        mdLayout: "61rem",
+        smLayout: "53rem",
       },
       colors: {
         default: "#242424",
@@ -26,21 +26,21 @@ export default {
       },
       fontSize: {
         defaultText: [
-          "1.6rem",
+          "1rem",
           {
             fontWeight: "DemiLight",
             lineHeight: "2",
           },
         ],
         sectionTitle: [
-          "3.2rem",
+          "2rem",
           {
             fontWeight: "normal",
             lineHeight: "1.8",
           },
         ],
         sectionEnTitle: [
-          "1.8rem",
+          "1.15rem",
           {
             fontWeight: "Regular",
             lineHeight: "1.4",
